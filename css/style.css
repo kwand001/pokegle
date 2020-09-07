@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fffafa;
+}
+
+form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid #f1f1f1;
+    float: left;
+    width: 90%;
+    background: #f1f1f1;
+
+  }
+  
+  form.example button {
+    float: left;
+    width: 10%;
+    padding: 10px;
+    background: #f8b739;
+    color: white;
+    font-size: 17px;
+    border: 1px solid #f8b739;
+    cursor: pointer;
+  }
+
+
+.maintext {
+    font-family: 'Itim', cursive;
+    margin: 0 auto 0 auto;
+    font-size: 80px;
+    color: #f8b739;
+}
+
+.search {
+    padding: 50px 450px 0 450px;
+    position: relative;
+    text-align: center;
+}
+
+.the-e {
+    font-size: 100px;
+    font-weight: 10;
+}
