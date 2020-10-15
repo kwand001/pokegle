@@ -3,32 +3,129 @@
     <head>
         <meta charset="utf-8">
         <title>
-            Pokegle!
+            Pokégle!
         </title>
-        <link rel="stylesheet" href="css\style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Itim&display=swap" rel="stylesheet"> 
+        <link rel="stylesheet" href="css\style.css"> 
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Itim&family=Quicksand&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="https://archives.bulbagarden.net/media/upload/4/42/Bag_Love_Ball_Sprite.png" type="image/x-icon">  
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     </head>
 
-    <body></body>
-
-        <div class="search">
-            <h1 class="maintext">POK<span class="the-e">é</span>GLE!</h1>
-            <form class="example" action="/action_page.php">
-                <input type="text" placeholder="type in a pokemon!" name="search">
-                <button type="submit"><i class="fa fa-search"></i></button>
-              </form>
-        </div>
-
-        <div class="results">
-
+    <body>
+        
+        <div class="nav-bar">
 
         </div>
 
-        <div class="footer">
+        <div class="container"> 
+            <!--DEFAULT----------------------------------------------------------------------------------->
+            <div class="row">
+                <a href="index.html"><h1 class="maintext">POK<span class="the-e">é</span>GLE!</h1></a>
 
-            
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-6">
+                    <form autocomplete="off" action="/" method="get" onsubmit="return false;">
+                    <div class="autocomplete">
+                        <input id="myInput" type="text" name="selectedPokemon" placeholder="type in a pokemon to view their type, stats, and abilities!" autofocus height="40">
+                    </div>
+                </div>
+                <div class="col-0">
+                    <input type="submit" value="go!" onclick="saveVar()">
+                </div>
+                </form> 
+            </div>
+            <br><br><br>
+
+            <div id= maincols class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+                
+                <div class="col"> <!-- main form-->
+                    <p id="type1" class="types"></p> <p id="type2" class="types"></p><img id="pokeicon" class="icons" src="">
+                    <p id="pokename" class="names"></p>
+
+                    <!-- <p id="pokeabils" class="abils"></p> -->
+                    <p id="pokeabil1" class="abil1 " data-toggle="tooltip" data-original-title="placeholder"></p>
+    
+                    <p id="pokeabil2" class="abil2" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="hiddenabil" class="hidabils" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="hp" class="hps"></p>
+                    <p id="atk" class="atks"></p>
+                    <p id="def" class="defs"></p>
+                    <p id="spa" class="spas"></p>
+                    <p id="spd" class="spds"></p>
+                    <p id="spe" class="spes"></p>
+                    
+                </div>
+                
+                <div class="col"> <!-- alt form1-->
+                    <p id="form1type1" class="types"></p> <p id="form1type2" class="types"></p>
+                    <img id="form1icon" class="icons" src="">
+                    <p id="form1name" class="names"></p>
+                    <p id="form1abil1" class="abil1" data-toggle="tooltip" data-original-title="placeholder"></p>
+    
+                    <p id="form1abil2" class="abil2" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="form1ha" class="hidabils" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="form1hp" class="hps"></p>
+                    <p id="form1atk" class="atks"></p>
+                    <p id="form1def" class="defs"></p>
+                    <p id="form1spa" class="spas"></p>
+                    <p id="form1spd" class="spds"></p>
+                    <p id="form1spe" class="spes"></p>
+                </div>
+
+                <div class="col"> <!-- alt form2-->
+                    
+                    
+                    <p id="form2type1" class="types"></p> 
+                    <p id="form2type2" class="types"></p>
+                    <img id="form2icon" class="icons" src="">
+                    
+                    <p id="form2name" class="names"></p>
+                    <p id="form2abil1" class="abil1" data-toggle="tooltip" data-original-title="placeholder"></p>
+    
+                    <p id="form2abil2" class="abil2" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="form2ha" class="hidabils" data-toggle="tooltip" data-original-title=""></p>
+
+
+                    <p id="form2hp" class="hps"></p>
+                    <p id="form2atk" class="atks"></p>
+                    <p id="form2def" class="defs"></p>
+                    <p id="form2spa" class="spas"></p>
+                    <p id="form2spd" class="spds"></p>
+                    <p id="form2spe" class="spes"></p>
+                </div>
+
+                <div class="col"> <!-- alt form3-->
+                    <p id="form3type1" class="types"></p> <p id="form3type2" class="types"></p>
+                    <img id="form3icon" class="icons" src="">
+                    <p id="form3name" class="names"></p>
+                    <p id="form3abil1" class="abil1" data-toggle="tooltip" data-original-title="placeholder"></p>
+    
+                    <p id="form3abil2" class="abil2" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="form3ha" class="hidabils" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="form3hp" class="hps"></p>
+                    <p id="form3atk" class="atks"></p>
+                    <p id="form3def" class="defs"></p>
+                    <p id="form3spa" class="spas"></p>
+                    <p id="form3spd" class="spds"></p>
+                    <p id="form3spe" class="spes"></p>
+                </div>
+            </div>
         </div>
+        <script
+			  src="https://code.jquery.com/jquery-3.5.1.js"
+			  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+              crossorigin="anonymous">
+        </script>
+        <script src="./scripts/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script src="./scripts/scrippies.js"></script>
+        <script>
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
+        </script>
     </body>
 </html>

@@ -2,44 +2,208 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: #fffafa;
+a {
+    font-family: 'Itim', cursive;
+    margin: 0 auto 0 auto;
+    font-size: 80px;
+    color: #f8b739;
+    display: inline-block;
 }
 
-form.example input[type=text] {
-    padding: 10px;
-    font-size: 17px;
-    border: 1px solid #f1f1f1;
-    float: left;
-    width: 90%;
-    background: #f1f1f1;
+body {
+    background-color: #fffafa;
+    margin: 0;
+}
 
-  }
-  
-  form.example button {
-    float: left;
-    width: 10%;
+
+input[type=text] {
+    margin-top: 15px;
     padding: 10px;
+    font-size: 16px;
+    border: 1px solid #f1f1f1;
+    width: 100%;
+    background: #f1f1f1;
+    color: rgb(119, 115, 115);
+    font-family: 'Quicksand', sans-serif;
+}
+
+input[type=submit] {
+    margin-top: 15px;
+    width: 70px;
+    padding: 10px 0;
     background: #f8b739;
     color: white;
     font-size: 17px;
     border: 1px solid #f8b739;
     cursor: pointer;
-  }
+    border-radius: 15%;
+}
 
+input[type=submit]:hover {
+    background: #f06a73;
+    border: 1px solid #f06a73;
+}
+
+/*p {
+    display: inline-block;
+    font-family: 'Handlee', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    padding-right: 30px;
+}*/
+
+.autocomplete-items {
+    border-bottom: none;
+    border-top: none;
+    
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 90%;
+    
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+    background-color: #f8b739; 
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+    background-color: #f8b739 !important; 
+    color: #ffffff; 
+
+}
+
+.abil1 {
+    margin: 0px;
+    background-color : rgb(231, 231, 231);
+}
+
+.abil2 {
+    margin: 0px;
+    background-color: rgb(192, 192, 192);
+}
+
+.altform {
+    margin-left: 10%;
+}
+
+.atks {
+    background-color: #ffd4db;
+}
+.autocomplete-items div {
+    padding: 5px;
+    cursor: pointer;
+    background-color: #fff; 
+    border-bottom: 1px solid #f8b739; 
+    font-family: 'Quicksand', sans-serif;
+    color: #838383;
+}
+
+.container {
+    position: relative;
+}
+
+.copyright {
+    text-align: right;
+
+}
+
+.defs {
+    background-color:#ddfbb6;
+}
+
+.footer {
+    bottom: 0%;
+    left: 90%;
+    position: fixed;
+}
+
+.hidabils {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    background-color: rgb(255, 228, 249);
+}
+
+.hps {
+    background-color: #ffcf78;
+}
+
+.icons {
+    display:inline-block;
+}
 
 .maintext {
     font-family: 'Itim', cursive;
     margin: 0 auto 0 auto;
     font-size: 80px;
     color: #f8b739;
+    display: inline-block;
+}
+
+.maintext:hover {
+    color:  #f06a73;
+}
+
+.names {
+    font-size: 20px;
+    margin: 0px;
+}
+
+.nav-bar {
+    background-color: #ffb4dd;
+    padding: 2%;
+}
+
+.pokeball {
+    padding: 0;
+   width: 15%;
+
 }
 
 .search {
-    padding: 50px 450px 0 450px;
+    padding: 10px 450px 0 450px;
     position: relative;
     text-align: center;
 }
+
+.spas {
+    background-color: #efcffb;
+}
+
+.spds {
+    background-color: #cde7fa;
+}
+
+.spes {
+    background-color: #fff878;
+}
+
+.types {
+    display: inline-block;
+    padding: 5px;
+}
+
+#pokename {
+}
+
+/*#poketype {
+    margin-top: 0px;
+    margin-left: 5%;
+
+}*/
+
+/*#type1 {
+    
+    margin: 0 0 0 8%;
+}
+
+#type2 {
+    
+    margin: 0px;
+    padding: 0px 10px 0px 10px;
+}*/
 
 .the-e {
     font-size: 100px;
