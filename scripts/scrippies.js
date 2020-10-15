@@ -266,7 +266,7 @@ function addIcon(idNum, form) {
 }
 
 function abilDesc(abilName, idName) {
-    $.getJSON("/abilities.json", function(json) {
+    $.getJSON("./data/abilities.json", function(json) {
         for (var i = 0; i < json.length; ++i) {
             if (abilName == json[i].name) {
                 document.getElementById(idName).attributes[3].value = json[i].description;
