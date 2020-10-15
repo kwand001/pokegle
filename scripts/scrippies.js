@@ -276,7 +276,7 @@ function abilDesc(abilName, idName) {
 }
 
 function clearIcon(place) {
-    document.getElementById(place).attributes[2].value = "";
+    document.getElementById(place).attributes[2].value =  "./imgs/dot.png";
 }
 
 function clearAllForms() {
