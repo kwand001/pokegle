@@ -1,3 +1,4 @@
+// Changes how the type looks depending on what type the Pokemon is.
 function typeColor(type, attr) {
     if (type == "fire") {
         document.getElementById(attr).style.backgroundColor = "#EE8130";
@@ -72,7 +73,7 @@ function typeColor(type, attr) {
         document.getElementById(attr).style.color = "#000000";
     }
 }
-
+// Fill in Form1 column
 function getForm1(formName) {
     $.getJSON("./data/forms.json", function(json) {
         for (var i = 0; i < json.length; ++i) {
@@ -99,7 +100,6 @@ function getForm1(formName) {
                     document.getElementById("form1type2").style.backgroundColor = "";
                     typeColor(json[i].type[0], "form1type1")
                 }
-
                 //ABILITIES-----------------------------------------------------------------------------------------------------
                 if (json[i].ability.length == 2) {
                     document.getElementById("form1abil1").innerHTML = json[i].ability[0];
@@ -134,7 +134,7 @@ function getForm1(formName) {
         }
     });
 }
-
+//Fill in Form2 column
 function getForm2(formName) {
     $.getJSON("./data/forms.json", function(json) {
         for (var i = 0; i < json.length; ++i) {
@@ -196,7 +196,7 @@ function getForm2(formName) {
         }
     });
 }
-
+//Fill in Form3 column
 function getForm3(formName) {
     $.getJSON("./data/forms.json", function(json) {
         for (var i = 0; i < json.length; ++i) {
@@ -258,13 +258,138 @@ function getForm3(formName) {
         }
     });
 }
+//Fill in Rotom's 4th form 
+function getForm4(formName) {
+    $.getJSON("./data/forms.json", function(json) {
+        for (var i = 0; i < json.length; ++i) {
+            if (formName == json[i].name) {
+                
+                //NAME--------------------------------------------------------------------------------------------------------
+                document.getElementById("form4name").innerHTML = json[i].name;
+                if (json[i].id != "NONE") {
+                    addIcon(json[i].id, "form4icon");
+                }
+                else {
+                    clearIcon("form4icon");
+                }        
+                //TYPE--------------------------------------------------------------------------------------------------------
+                if (json[i].type.length == 2) {
+                    document.getElementById("form4type1").innerHTML = json[i].type[0];
+                    document.getElementById("form4type2").innerHTML = json[i].type[1];
+                    typeColor(json[i].type[0], "form4type1")
+                    typeColor(json[i].type[1], "form4type2")
+                }
+                else {
+                    document.getElementById("form4type1").innerHTML = json[i].type;
+                    document.getElementById("form4type2").innerHTML = "";
+                    document.getElementById("form4type2").style.backgroundColor = "";
+                    typeColor(json[i].type[0], "form4type1")
+                }
 
+                //ABILITIES-----------------------------------------------------------------------------------------------------
+                if (json[i].ability.length == 2) {
+                    document.getElementById("form4abil1").innerHTML = json[i].ability[0];
+                    abilDesc(json[i].ability[0], "form4abil1");
+                    document.getElementById("form4abil2").innerHTML = json[i].ability[1];
+                    abilDesc(json[i].ability[1], "form4abil2");
+                }
+                else {
+                    document.getElementById("form4abil1").innerHTML = json[i].ability;
+                    abilDesc(json[i].ability, "form4abil1");
+                    document.getElementById("form4abil2").innerHTML = "-";
+                    clearAbilDesc("form4abil2");
+                }
+
+                if (json[i].hiddenability != "NONE") {
+                    document.getElementById("form4ha").innerHTML = "HA: " + json[i].hiddenability;
+                    abilDesc(json[i].hiddenability, "form4ha");
+                }
+                else {
+                    
+                    document.getElementById("form4ha").innerHTML = "HA: -";
+                    clearAbilDesc("form4ha");
+                }
+                //STATS-------------------------------------------------------------------------------------------------------
+                document.getElementById("form4hp").innerHTML = "HP: " + json[i].stats[0];
+                document.getElementById("form4atk").innerHTML = "ATK: " + json[i].stats[1];
+                document.getElementById("form4def").innerHTML = "DEF: " + json[i].stats[2];
+                document.getElementById("form4spa").innerHTML = "SpA: " + json[i].stats[3];
+                document.getElementById("form4spd").innerHTML = "SpD: " + json[i].stats[4];
+                document.getElementById("form4spe").innerHTML = "SPE: " + json[i].stats[5];
+            }
+        }
+    });
+}
+
+function getForm5(formName) {
+    $.getJSON("./data/forms.json", function(json) {
+        for (var i = 0; i < json.length; ++i) {
+            if (formName == json[i].name) {
+                
+                //NAME--------------------------------------------------------------------------------------------------------
+                document.getElementById("form5name").innerHTML = json[i].name;
+                if (json[i].id != "NONE") {
+                    addIcon(json[i].id, "form5icon");
+                }
+                else {
+                    clearIcon("form5icon");
+                }        
+                //TYPE--------------------------------------------------------------------------------------------------------
+                if (json[i].type.length == 2) {
+                    document.getElementById("form5type1").innerHTML = json[i].type[0];
+                    document.getElementById("form5type2").innerHTML = json[i].type[1];
+                    typeColor(json[i].type[0], "form5type1")
+                    typeColor(json[i].type[1], "form5type2")
+                }
+                else {
+                    document.getElementById("form5type1").innerHTML = json[i].type;
+                    document.getElementById("form5type2").innerHTML = "";
+                    document.getElementById("form5type2").style.backgroundColor = "";
+                    typeColor(json[i].type[0], "form5type1")
+                }
+
+                //ABILITIES-----------------------------------------------------------------------------------------------------
+                if (json[i].ability.length == 2) {
+                    document.getElementById("form5abil1").innerHTML = json[i].ability[0];
+                    abilDesc(json[i].ability[0], "form5abil1");
+                    document.getElementById("form5abil2").innerHTML = json[i].ability[1];
+                    abilDesc(json[i].ability[1], "form5abil2");
+                }
+                else {
+                    document.getElementById("form5abil1").innerHTML = json[i].ability;
+                    abilDesc(json[i].ability, "form5abil1");
+                    document.getElementById("form5abil2").innerHTML = "-";
+                    clearAbilDesc("form5abil2");
+                }
+
+                if (json[i].hiddenability != "NONE") {
+                    document.getElementById("form5ha").innerHTML = "HA: " + json[i].hiddenability;
+                    abilDesc(json[i].hiddenability, "form5ha");
+                }
+                else {
+                    
+                    document.getElementById("form5ha").innerHTML = "HA: -";
+                    clearAbilDesc("form5ha");
+                }
+                //STATS-------------------------------------------------------------------------------------------------------
+                document.getElementById("form5hp").innerHTML = "HP: " + json[i].stats[0];
+                document.getElementById("form5atk").innerHTML = "ATK: " + json[i].stats[1];
+                document.getElementById("form5def").innerHTML = "DEF: " + json[i].stats[2];
+                document.getElementById("form5spa").innerHTML = "SpA: " + json[i].stats[3];
+                document.getElementById("form5spd").innerHTML = "SpD: " + json[i].stats[4];
+                document.getElementById("form5spe").innerHTML = "SPE: " + json[i].stats[5];
+            }
+        }
+    });
+}
+
+//Get icon from Serebii's site
 function addIcon(idNum, form) {
     var pkm = "https://www.serebii.net/pokedex-swsh/icon/" + idNum + ".png";
 
     document.getElementById(form).attributes[2].value = pkm;
 }
-
+//Add in ability description tooltips
 function abilDesc(abilName, idName) {
     $.getJSON("./data/abilities.json", function(json) {
         for (var i = 0; i < json.length; ++i) {
@@ -274,11 +399,11 @@ function abilDesc(abilName, idName) {
         }
     });
 }
-
+//Clear icons
 function clearIcon(place) {
     document.getElementById(place).attributes[2].value =  "./imgs/dot.png";
 }
-
+//Clear forms
 function clearAllForms() {
     document.getElementById("pokename").innerHTML = "";
     clearIcon("pokeicon");
@@ -343,22 +468,56 @@ function clearAllForms() {
     document.getElementById("form3spa").innerHTML = "";
     document.getElementById("form3spd").innerHTML = "";
     document.getElementById("form3spe").innerHTML = "";
-}
 
+    document.getElementById("form4name").innerHTML = "";
+    clearIcon("form4icon");
+    document.getElementById("form4type1").innerHTML = "";
+    document.getElementById("form4type2").innerHTML = "";
+    document.getElementById("form4type1").style.backgroundColor = "";
+    document.getElementById("form4type2").style.backgroundColor = "";
+    document.getElementById("form4abil1").innerHTML = "";
+    document.getElementById("form4abil2").innerHTML = "";
+    document.getElementById("form4ha").innerHTML = "";
+    document.getElementById("form4hp").innerHTML = "";
+    document.getElementById("form4atk").innerHTML = "";
+    document.getElementById("form4def").innerHTML = "";
+    document.getElementById("form4spa").innerHTML = "";
+    document.getElementById("form4spd").innerHTML = "";
+    document.getElementById("form4spe").innerHTML = "";
+
+    document.getElementById("form5name").innerHTML = "";
+    clearIcon("form5icon");
+    document.getElementById("form5type1").innerHTML = "";
+    document.getElementById("form5type2").innerHTML = "";
+    document.getElementById("form5type1").style.backgroundColor = "";
+    document.getElementById("form5type2").style.backgroundColor = "";
+    document.getElementById("form5abil1").innerHTML = "";
+    document.getElementById("form5abil2").innerHTML = "";
+    document.getElementById("form5ha").innerHTML = "";
+    document.getElementById("form5hp").innerHTML = "";
+    document.getElementById("form5atk").innerHTML = "";
+    document.getElementById("form5def").innerHTML = "";
+    document.getElementById("form5spa").innerHTML = "";
+    document.getElementById("form5spd").innerHTML = "";
+    document.getElementById("form5spe").innerHTML = "";
+}
+//Clear ability descriptions
 function clearAbilDesc(idName) {
     document.getElementById(idName).attributes[3].value = "";
 }
-
+//Fill in main form. Runs when a Pokemon is selected.
 function saveVar() {
     var pkmn = document.getElementById("myInput").value;
     $.getJSON("./data/pokemon.json", function(json) {
         for (var i = 0; i < json.length; ++i) {
             if (pkmn == json[i].name) {
-                clearAllForms();
+                clearAllForms(); 
                 
+                //IF NO FORMS. Use 3 columns and put the single form in the middle column (form1 column)
+                //Definitely a better way to do this but... for now.
                 if (json[i].forms[0] == "NONE") {
                      //NAME--------------------------------------------------------------------------------------------------------
-                     document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-2 row-cols-md-3";
+                     document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-1 row-cols-md-3";
                      document.getElementById("form1name").innerHTML = json[i].name;
                     if (json[i].id != "NONE") {
                         addIcon(json[i].id, "form1icon");
@@ -379,7 +538,6 @@ function saveVar() {
                         document.getElementById("form1type2").style.backgroundColor = "";
                         typeColor(json[i].type[0], "form1type1")
                     }
-
                     //ABILITIES-----------------------------------------------------------------------------------------------------
                     if (json[i].ability.length == 2) {
                         document.getElementById("form1abil1").innerHTML = json[i].ability[0];
@@ -393,7 +551,6 @@ function saveVar() {
                         document.getElementById("form1abil2").innerHTML = "-";
                         clearAbilDesc("form1abil2");
                     }
-
                     if (json[i].hiddenability != "NONE") {
                         document.getElementById("form1ha").innerHTML = "HA: " + json[i].hiddenability;
                         abilDesc(json[i].hiddenability, "form1ha");
@@ -412,7 +569,6 @@ function saveVar() {
                 }
                 else {
                     //NAME--------------------------------------------------------------------------------------------------------
-                    
                     if (json[i].altname != "NONE") {
                         document.getElementById("pokename").innerHTML = json[i].altname;
                     }
@@ -476,7 +632,6 @@ function saveVar() {
                         document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-2 row-cols-md-2";
                         getForm1(json[i].forms[0]);
                         //<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3"></div>
-                        
 
                         if (json[i].forms.length == 2) {
                             document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-2 row-cols-md-3";
@@ -486,6 +641,14 @@ function saveVar() {
                             document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-2 row-cols-md-4";
                             getForm2(json[i].forms[1]);
                             getForm3(json[i].forms[2]);
+                        }
+                        //literally only for Rotom......
+                        else if (json[i].forms.length == 5) {
+                            document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-2 row-cols-md-3";
+                            getForm2(json[i].forms[1]);
+                            getForm3(json[i].forms[2]);
+                            getForm4(json[i].forms[3]);
+                            getForm5(json[i].forms[4]);
                         }
                     }
                 }
@@ -556,7 +719,7 @@ function autocomplete(inp, arr) {
         } else if (e.keyCode == 13) {
 
             //If the ENTER key is pressed, prevent the form from being submitted,
-            //if (x) x[currentFocus].click();
+            if (x) x[currentFocus].click();
             //e.preventDefault();
             if (currentFocus > -1) {
             //and simulate a click on the "active" item:

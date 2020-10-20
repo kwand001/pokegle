@@ -1,18 +1,20 @@
 * {
     box-sizing: border-box;
 }
-
 a {
     font-family: 'Itim', cursive;
-    margin: 0 auto 0 auto;
     font-size: 80px;
     color: #f8b739;
     display: inline-block;
 }
 
+.nav-link {
+    font-size: 20px;
+}
+
 body {
     background-color: #fffafa;
-    margin: 0;
+    
 }
 
 
@@ -77,11 +79,13 @@ input[type=submit]:hover {
 .abil1 {
     margin: 0px;
     background-color : rgb(231, 231, 231);
+    font-size: 18px;
 }
 
 .abil2 {
     margin: 0px;
     background-color: rgb(192, 192, 192);
+    font-size: 18px;
 }
 
 .altform {
@@ -90,6 +94,7 @@ input[type=submit]:hover {
 
 .atks {
     background-color: #ffd4db;
+    font-size: 18px;
 }
 .autocomplete-items div {
     padding: 5px;
@@ -111,6 +116,7 @@ input[type=submit]:hover {
 
 .defs {
     background-color:#ddfbb6;
+    font-size: 18px;
 }
 
 .footer {
@@ -124,10 +130,12 @@ input[type=submit]:hover {
     margin-right: 0px;
     margin-left: 0px;
     background-color: rgb(255, 228, 249);
+    font-size: 18px;
 }
 
 .hps {
     background-color: #ffcf78;
+    font-size: 18px;
 }
 
 .icons {
@@ -137,9 +145,13 @@ input[type=submit]:hover {
 .maintext {
     font-family: 'Itim', cursive;
     margin: 0 auto 0 auto;
-    font-size: 80px;
+    font-size: 70px;
     color: #f8b739;
     display: inline-block;
+}
+
+#title {
+    margin: 0 auto 0 auto;
 }
 
 .maintext:hover {
@@ -147,7 +159,7 @@ input[type=submit]:hover {
 }
 
 .names {
-    font-size: 20px;
+    font-size: 24px;
     margin: 0px;
 }
 
@@ -166,18 +178,22 @@ input[type=submit]:hover {
     padding: 10px 450px 0 450px;
     position: relative;
     text-align: center;
+    font-size: 18px;
 }
 
 .spas {
     background-color: #efcffb;
+    font-size: 18px;
 }
 
 .spds {
     background-color: #cde7fa;
+    font-size: 18px;
 }
 
 .spes {
     background-color: #fff878;
+    font-size: 18px;
 }
 
 .types {
@@ -185,27 +201,7 @@ input[type=submit]:hover {
     padding: 5px;
 }
 
-#pokename {
-}
-
-/*#poketype {
-    margin-top: 0px;
-    margin-left: 5%;
-
-}*/
-
-/*#type1 {
-    
-    margin: 0 0 0 8%;
-}
-
-#type2 {
-    
-    margin: 0px;
-    padding: 0px 10px 0px 10px;
-}*/
-
 .the-e {
-    font-size: 100px;
+    font-size: 90px;
     font-weight: 10;
 }

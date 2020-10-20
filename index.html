@@ -5,26 +5,54 @@
         <title>
             Pokégle!
         </title>
+        <!-- MY CSS -->
         <link rel="stylesheet" href="css\style.css"> 
+        <!-- BOOTSTRAP -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <!-- FONTS -->
         <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Itim&family=Quicksand&display=swap" rel="stylesheet">
+        <!-- FAVICON -->
         <link rel="shortcut icon" href="https://archives.bulbagarden.net/media/upload/4/42/Bag_Love_Ball_Sprite.png" type="image/x-icon">  
+        <!-- FONT AWESOME -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- BOOTSTRAP RESPONSIVE DESIGN -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> 
+
     </head>
 
     <body>
-        
-        <div class="nav-bar">
+    <!-- NAV BAR -->
+        <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #fa8383";>
+            <a class="navbar-brand" href="">pokégle</a>
 
-        </div>
-
-        <div class="container"> 
-            <!--DEFAULT----------------------------------------------------------------------------------->
-            <div class="row">
-                <a href="index.html"><h1 class="maintext">POK<span class="the-e">é</span>GLE!</h1></a>
-
+            <!-- Creates a button for when screen is too small -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Links go here -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/sawri/pokegle">github</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="">random</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">compare</a>
+                </li>-->
+                </ul>
             </div>
+        </nav>
+
+    <!-- TITLE -->
+        <div class="container"> 
+            <div class="row justify-content-center">
+                <a href="index.html"><h1 class="maintext">POK<span class="the-e">é</span>GLE!</h1></a>
+            </div>
+
+    <!-- SEARCH BAR + GO BUTTON -->
             <div class="row justify-content-center">
                 <div class="col-6">
                     <form autocomplete="off" action="/" method="get" onsubmit="return false;">
@@ -35,19 +63,23 @@
                 <div class="col-0">
                     <input type="submit" value="go!" onclick="saveVar()">
                 </div>
-                </form> 
+                    </form> 
             </div>
             <br><br><br>
 
-            <div id= maincols class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
-                
-                <div class="col"> <!-- main form-->
-                    <p id="type1" class="types"></p> <p id="type2" class="types"></p><img id="pokeicon" class="icons" src="">
-                    <p id="pokename" class="names"></p>
 
-                    <!-- <p id="pokeabils" class="abils"></p> -->
+    <!-- POKEMON INFORMATION -->
+
+            <!-- The number of columns will change depending on how many forms the Pokemon has. -->
+            <div id= maincols class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+
+                <!-- Main Form -->
+                <div class="col"> 
+                    <p id="type1" class="types"></p> 
+                    <p id="type2" class="types"></p>
+                    <img id="pokeicon" class="icons" src="">
+                    <p id="pokename" class="names"></p>
                     <p id="pokeabil1" class="abil1 " data-toggle="tooltip" data-original-title="placeholder"></p>
-    
                     <p id="pokeabil2" class="abil2" data-toggle="tooltip" data-original-title=""></p>
                     <p id="hiddenabil" class="hidabils" data-toggle="tooltip" data-original-title=""></p>
                     <p id="hp" class="hps"></p>
@@ -55,16 +87,16 @@
                     <p id="def" class="defs"></p>
                     <p id="spa" class="spas"></p>
                     <p id="spd" class="spds"></p>
-                    <p id="spe" class="spes"></p>
-                    
+                    <p id="spe" class="spes"></p>     
                 </div>
                 
-                <div class="col"> <!-- alt form1-->
-                    <p id="form1type1" class="types"></p> <p id="form1type2" class="types"></p>
+                <!-- Alternate Form 1 -->
+                <div class="col">
+                    <p id="form1type1" class="types"></p> 
+                    <p id="form1type2" class="types"></p>
                     <img id="form1icon" class="icons" src="">
                     <p id="form1name" class="names"></p>
                     <p id="form1abil1" class="abil1" data-toggle="tooltip" data-original-title="placeholder"></p>
-    
                     <p id="form1abil2" class="abil2" data-toggle="tooltip" data-original-title=""></p>
                     <p id="form1ha" class="hidabils" data-toggle="tooltip" data-original-title=""></p>
                     <p id="form1hp" class="hps"></p>
@@ -75,20 +107,15 @@
                     <p id="form1spe" class="spes"></p>
                 </div>
 
-                <div class="col"> <!-- alt form2-->
-                    
-                    
+                <!-- Alternate Form 2 -->
+                <div class="col"> 
                     <p id="form2type1" class="types"></p> 
                     <p id="form2type2" class="types"></p>
                     <img id="form2icon" class="icons" src="">
-                    
                     <p id="form2name" class="names"></p>
                     <p id="form2abil1" class="abil1" data-toggle="tooltip" data-original-title="placeholder"></p>
-    
                     <p id="form2abil2" class="abil2" data-toggle="tooltip" data-original-title=""></p>
                     <p id="form2ha" class="hidabils" data-toggle="tooltip" data-original-title=""></p>
-
-
                     <p id="form2hp" class="hps"></p>
                     <p id="form2atk" class="atks"></p>
                     <p id="form2def" class="defs"></p>
@@ -97,12 +124,13 @@
                     <p id="form2spe" class="spes"></p>
                 </div>
 
-                <div class="col"> <!-- alt form3-->
-                    <p id="form3type1" class="types"></p> <p id="form3type2" class="types"></p>
+                <!-- Alternate Form 3 -->
+                <div class="col"> 
+                    <p id="form3type1" class="types"></p> 
+                    <p id="form3type2" class="types"></p>
                     <img id="form3icon" class="icons" src="">
                     <p id="form3name" class="names"></p>
                     <p id="form3abil1" class="abil1" data-toggle="tooltip" data-original-title="placeholder"></p>
-    
                     <p id="form3abil2" class="abil2" data-toggle="tooltip" data-original-title=""></p>
                     <p id="form3ha" class="hidabils" data-toggle="tooltip" data-original-title=""></p>
                     <p id="form3hp" class="hps"></p>
@@ -112,16 +140,57 @@
                     <p id="form3spd" class="spds"></p>
                     <p id="form3spe" class="spes"></p>
                 </div>
+                <!-- Thanks to Rotom having FIVE alternate forms, we need a few more columns. :)  -->
+
+                <!-- Alternate Form 4/Rotom Form 4 -->
+                <div class="col"> 
+                    <p id="form4type1" class="types"></p> 
+                    <p id="form4type2" class="types"></p>
+                    <img id="form4icon" class="icons" src="">
+                    <p id="form4name" class="names"></p>
+                    <p id="form4abil1" class="abil1" data-toggle="tooltip" data-original-title="placeholder"></p>
+                    <p id="form4abil2" class="abil2" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="form4ha" class="hidabils" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="form4hp" class="hps"></p>
+                    <p id="form4atk" class="atks"></p>
+                    <p id="form4def" class="defs"></p>
+                    <p id="form4spa" class="spas"></p>
+                    <p id="form4spd" class="spds"></p>
+                    <p id="form4spe" class="spes"></p>
+                </div>
+
+                <!-- Alternate Form 5/Rotom Form 5 -->
+                <div class="col"> 
+                    <p id="form5type1" class="types"></p> 
+                    <p id="form5type2" class="types"></p>
+                    <img id="form5icon" class="icons" src="">
+                    <p id="form5name" class="names"></p>
+                    <p id="form5abil1" class="abil1" data-toggle="tooltip" data-original-title="placeholder"></p>
+                    <p id="form5abil2" class="abil2" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="form5ha" class="hidabils" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="form5hp" class="hps"></p>
+                    <p id="form5atk" class="atks"></p>
+                    <p id="form5def" class="defs"></p>
+                    <p id="form5spa" class="spas"></p>
+                    <p id="form5spd" class="spds"></p>
+                    <p id="form5spe" class="spes"></p>
+                </div>
             </div>
         </div>
+
+        <!-- jQuery -->
         <script
 			  src="https://code.jquery.com/jquery-3.5.1.js"
 			  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
               crossorigin="anonymous">
         </script>
+        <!-- Tooltips require popper -->
         <script src="./scripts/popper.min.js"></script>
+        <!-- More bootstrap -->
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <!-- My own javascript -->
         <script src="./scripts/scrippies.js"></script>
+        <!-- Initialize tooltips -->
         <script>
             $(function () {
                 $('[data-toggle="tooltip"]').tooltip()
