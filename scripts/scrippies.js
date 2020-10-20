@@ -75,6 +75,7 @@ function typeColor(type, attr) {
 }
 // Fill in Form1 column
 function getForm1(formName) {
+    document.getElementById("form2").attributes[2].value = "display: block;";
     $.getJSON("./data/forms.json", function(json) {
         for (var i = 0; i < json.length; ++i) {
             if (formName == json[i].name) {
@@ -136,6 +137,7 @@ function getForm1(formName) {
 }
 //Fill in Form2 column
 function getForm2(formName) {
+    document.getElementById("form3").attributes[2].value = "display: block;";
     $.getJSON("./data/forms.json", function(json) {
         for (var i = 0; i < json.length; ++i) {
             if (formName == json[i].name) {
@@ -198,6 +200,7 @@ function getForm2(formName) {
 }
 //Fill in Form3 column
 function getForm3(formName) {
+    document.getElementById("form4").attributes[2].value = "display: block;";
     $.getJSON("./data/forms.json", function(json) {
         for (var i = 0; i < json.length; ++i) {
             if (formName == json[i].name) {
@@ -260,6 +263,7 @@ function getForm3(formName) {
 }
 //Fill in Rotom's 4th form
 function getForm4(formName) {
+    document.getElementById("form5").attributes[2].value = "display: block;";
     $.getJSON("./data/forms.json", function(json) {
         for (var i = 0; i < json.length; ++i) {
             if (formName == json[i].name) {
@@ -322,6 +326,7 @@ function getForm4(formName) {
 }
 //Fill in Rotom's 5th form
 function getForm5(formName) {
+    document.getElementById("form6").attributes[2].value = "display: block;";
     $.getJSON("./data/forms.json", function(json) {
         for (var i = 0; i < json.length; ++i) {
             if (formName == json[i].name) {
@@ -405,101 +410,12 @@ function clearIcon(place) {
 }
 //Clear forms
 function clearAllForms() {
-    document.getElementById("pokename").innerHTML = "";
-    clearIcon("pokeicon");
-    document.getElementById("type1").innerHTML = "";
-    document.getElementById("type2").innerHTML = "";
-    document.getElementById("type1").style.backgroundColor = "";
-    document.getElementById("type2").style.backgroundColor = "";
-    document.getElementById("pokeabil1").innerHTML = "";
-    document.getElementById("pokeabil2").innerHTML = "";
-    document.getElementById("hiddenabil").innerHTML = "";
-    document.getElementById("hp").innerHTML = "";
-    document.getElementById("atk").innerHTML = "";
-    document.getElementById("def").innerHTML = "";
-    document.getElementById("spa").innerHTML = "";
-    document.getElementById("spd").innerHTML = "";
-    document.getElementById("spe").innerHTML = "";
-
-    document.getElementById("form1name").innerHTML = "";
-    clearIcon("form1icon");
-    document.getElementById("form1type1").innerHTML = "";
-    document.getElementById("form1type2").innerHTML = "";
-    document.getElementById("form1type1").style.backgroundColor = "";
-    document.getElementById("form1type2").style.backgroundColor = "";
-    document.getElementById("form1abil1").innerHTML = "";
-    document.getElementById("form1abil2").innerHTML = "";
-    document.getElementById("form1ha").innerHTML = "";
-    document.getElementById("form1hp").innerHTML = "";
-    document.getElementById("form1atk").innerHTML = "";
-    document.getElementById("form1def").innerHTML = "";
-    document.getElementById("form1spa").innerHTML = "";
-    document.getElementById("form1spd").innerHTML = "";
-    document.getElementById("form1spe").innerHTML = "";
-
-    document.getElementById("form2name").innerHTML = "";
-    clearIcon("form2icon");
-    document.getElementById("form2type1").innerHTML = "";
-    document.getElementById("form2type2").innerHTML = "";
-    document.getElementById("form2type1").style.backgroundColor = "";
-    document.getElementById("form2type2").style.backgroundColor = "";
-    document.getElementById("form2abil1").innerHTML = "";
-    document.getElementById("form2abil2").innerHTML = "";
-    document.getElementById("form2ha").innerHTML = "";
-    document.getElementById("form2hp").innerHTML = "";
-    document.getElementById("form2atk").innerHTML = "";
-    document.getElementById("form2def").innerHTML = "";
-    document.getElementById("form2spa").innerHTML = "";
-    document.getElementById("form2spd").innerHTML = "";
-    document.getElementById("form2spe").innerHTML = "";
-
-    document.getElementById("form3name").innerHTML = "";
-    clearIcon("form3icon");
-    document.getElementById("form3type1").innerHTML = "";
-    document.getElementById("form3type2").innerHTML = "";
-    document.getElementById("form3type1").style.backgroundColor = "";
-    document.getElementById("form3type2").style.backgroundColor = "";
-    document.getElementById("form3abil1").innerHTML = "";
-    document.getElementById("form3abil2").innerHTML = "";
-    document.getElementById("form3ha").innerHTML = "";
-    document.getElementById("form3hp").innerHTML = "";
-    document.getElementById("form3atk").innerHTML = "";
-    document.getElementById("form3def").innerHTML = "";
-    document.getElementById("form3spa").innerHTML = "";
-    document.getElementById("form3spd").innerHTML = "";
-    document.getElementById("form3spe").innerHTML = "";
-
-    document.getElementById("form4name").innerHTML = "";
-    clearIcon("form4icon");
-    document.getElementById("form4type1").innerHTML = "";
-    document.getElementById("form4type2").innerHTML = "";
-    document.getElementById("form4type1").style.backgroundColor = "";
-    document.getElementById("form4type2").style.backgroundColor = "";
-    document.getElementById("form4abil1").innerHTML = "";
-    document.getElementById("form4abil2").innerHTML = "";
-    document.getElementById("form4ha").innerHTML = "";
-    document.getElementById("form4hp").innerHTML = "";
-    document.getElementById("form4atk").innerHTML = "";
-    document.getElementById("form4def").innerHTML = "";
-    document.getElementById("form4spa").innerHTML = "";
-    document.getElementById("form4spd").innerHTML = "";
-    document.getElementById("form4spe").innerHTML = "";
-
-    document.getElementById("form5name").innerHTML = "";
-    clearIcon("form5icon");
-    document.getElementById("form5type1").innerHTML = "";
-    document.getElementById("form5type2").innerHTML = "";
-    document.getElementById("form5type1").style.backgroundColor = "";
-    document.getElementById("form5type2").style.backgroundColor = "";
-    document.getElementById("form5abil1").innerHTML = "";
-    document.getElementById("form5abil2").innerHTML = "";
-    document.getElementById("form5ha").innerHTML = "";
-    document.getElementById("form5hp").innerHTML = "";
-    document.getElementById("form5atk").innerHTML = "";
-    document.getElementById("form5def").innerHTML = "";
-    document.getElementById("form5spa").innerHTML = "";
-    document.getElementById("form5spd").innerHTML = "";
-    document.getElementById("form5spe").innerHTML = "";
+    document.getElementById("form1").attributes[2].value = "display: none;";
+    document.getElementById("form2").attributes[2].value = "display: none;";
+    document.getElementById("form3").attributes[2].value = "display: none;";
+    document.getElementById("form4").attributes[2].value = "display: none;";
+    document.getElementById("form5").attributes[2].value = "display: none;";
+    document.getElementById("form6").attributes[2].value = "display: none;";
 }
 //Clear ability descriptions
 function clearAbilDesc(idName) {
@@ -512,12 +428,12 @@ function saveVar() {
         for (var i = 0; i < json.length; ++i) {
             if (pkmn == json[i].name.toUpperCase()) {
                 clearAllForms();
-
                 //IF NO FORMS. Use 3 columns and put the single form in the middle column (form1 column)
                 //Definitely a better way to do this but... for now.
                 if (json[i].forms[0] == "NONE") {
                      //NAME--------------------------------------------------------------------------------------------------------
                      document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-1 row-cols-md-3";
+                     document.getElementById("form2").attributes[2].value = "display: block;";
                      document.getElementById("form1name").innerHTML = json[i].name;
                     if (json[i].id != "NONE") {
                         addIcon(json[i].id, "form1icon");
@@ -569,6 +485,7 @@ function saveVar() {
                 }
                 else {
                     //NAME--------------------------------------------------------------------------------------------------------
+                    document.getElementById("form1").attributes[2].value = "display: block;";
                     if (json[i].altname != "NONE") {
                         document.getElementById("pokename").innerHTML = json[i].altname;
                     }
@@ -628,10 +545,8 @@ function saveVar() {
 
                     //FORMS-------------------------------------------------------------------------------------------------------
                     if (json[i].forms[0] != "NONE") {
-                        //alert(document.getElementById("maincols").attributes[1].value);
                         document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-2 row-cols-md-2";
                         getForm1(json[i].forms[0]);
-                        //<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3"></div>
 
                         if (json[i].forms.length == 2) {
                             document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-2 row-cols-md-3";
