@@ -2,11 +2,9 @@
 
 Pokegle is a webapp that allows you to look up the type, abilities, ability descriptions (on hover or tap for mobile), base stats, and alternate forms of any Pokemon! 
 
-<b>Current Known Issues:</b>
+# Current Known Issues:
 
-Rotom's forms are not displaying properly.
-
-<b>To-do:</b>
+# To-do
 
 Add an option to compare two pokemon.
 
