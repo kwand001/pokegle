@@ -78,7 +78,7 @@ function getForm1(formName) {
     $.getJSON("./data/forms.json", function(json) {
         for (var i = 0; i < json.length; ++i) {
             if (formName == json[i].name) {
-                
+
                 //NAME--------------------------------------------------------------------------------------------------------
                 document.getElementById("form1name").innerHTML = json[i].name;
                 if (json[i].id != "NONE") {
@@ -86,7 +86,7 @@ function getForm1(formName) {
                 }
                 else {
                     clearIcon("form1icon");
-                }      
+                }
                 //TYPE--------------------------------------------------------------------------------------------------------
                 if (json[i].type.length == 2) {
                     document.getElementById("form1type1").innerHTML = json[i].type[0];
@@ -119,7 +119,7 @@ function getForm1(formName) {
                     abilDesc(json[i].hiddenability, "form1ha");
                 }
                 else {
-                    
+
                     document.getElementById("form1ha").innerHTML = "HA: -";
                     clearAbilDesc("form1ha");
                 }
@@ -139,7 +139,7 @@ function getForm2(formName) {
     $.getJSON("./data/forms.json", function(json) {
         for (var i = 0; i < json.length; ++i) {
             if (formName == json[i].name) {
-                
+
                 //NAME--------------------------------------------------------------------------------------------------------
                 document.getElementById("form2name").innerHTML = json[i].name;
                 if (json[i].id != "NONE") {
@@ -147,7 +147,7 @@ function getForm2(formName) {
                 }
                 else {
                     clearIcon("form2icon");
-                }     
+                }
                 //TYPE--------------------------------------------------------------------------------------------------------
                 if (json[i].type.length == 2) {
                     document.getElementById("form2type1").innerHTML = json[i].type[0];
@@ -181,7 +181,7 @@ function getForm2(formName) {
                     abilDesc(json[i].hiddenability, "form2ha");
                 }
                 else {
-                    
+
                     document.getElementById("form2ha").innerHTML = "HA: -";
                     clearAbilDesc("form2ha");
                 }
@@ -201,7 +201,7 @@ function getForm3(formName) {
     $.getJSON("./data/forms.json", function(json) {
         for (var i = 0; i < json.length; ++i) {
             if (formName == json[i].name) {
-                
+
                 //NAME--------------------------------------------------------------------------------------------------------
                 document.getElementById("form3name").innerHTML = json[i].name;
                 if (json[i].id != "NONE") {
@@ -209,7 +209,7 @@ function getForm3(formName) {
                 }
                 else {
                     clearIcon("form3icon");
-                }        
+                }
                 //TYPE--------------------------------------------------------------------------------------------------------
                 if (json[i].type.length == 2) {
                     document.getElementById("form3type1").innerHTML = json[i].type[0];
@@ -243,7 +243,7 @@ function getForm3(formName) {
                     abilDesc(json[i].hiddenability, "form3ha");
                 }
                 else {
-                    
+
                     document.getElementById("form3ha").innerHTML = "HA: -";
                     clearAbilDesc("form3ha");
                 }
@@ -258,12 +258,12 @@ function getForm3(formName) {
         }
     });
 }
-//Fill in Rotom's 4th form 
+//Fill in Rotom's 4th form
 function getForm4(formName) {
     $.getJSON("./data/forms.json", function(json) {
         for (var i = 0; i < json.length; ++i) {
             if (formName == json[i].name) {
-                
+
                 //NAME--------------------------------------------------------------------------------------------------------
                 document.getElementById("form4name").innerHTML = json[i].name;
                 if (json[i].id != "NONE") {
@@ -271,7 +271,7 @@ function getForm4(formName) {
                 }
                 else {
                     clearIcon("form4icon");
-                }        
+                }
                 //TYPE--------------------------------------------------------------------------------------------------------
                 if (json[i].type.length == 2) {
                     document.getElementById("form4type1").innerHTML = json[i].type[0];
@@ -305,7 +305,7 @@ function getForm4(formName) {
                     abilDesc(json[i].hiddenability, "form4ha");
                 }
                 else {
-                    
+
                     document.getElementById("form4ha").innerHTML = "HA: -";
                     clearAbilDesc("form4ha");
                 }
@@ -325,7 +325,7 @@ function getForm5(formName) {
     $.getJSON("./data/forms.json", function(json) {
         for (var i = 0; i < json.length; ++i) {
             if (formName == json[i].name) {
-                
+
                 //NAME--------------------------------------------------------------------------------------------------------
                 document.getElementById("form5name").innerHTML = json[i].name;
                 if (json[i].id != "NONE") {
@@ -333,7 +333,7 @@ function getForm5(formName) {
                 }
                 else {
                     clearIcon("form5icon");
-                }        
+                }
                 //TYPE--------------------------------------------------------------------------------------------------------
                 if (json[i].type.length == 2) {
                     document.getElementById("form5type1").innerHTML = json[i].type[0];
@@ -367,7 +367,7 @@ function getForm5(formName) {
                     abilDesc(json[i].hiddenability, "form5ha");
                 }
                 else {
-                    
+
                     document.getElementById("form5ha").innerHTML = "HA: -";
                     clearAbilDesc("form5ha");
                 }
@@ -420,7 +420,7 @@ function clearAllForms() {
     document.getElementById("spa").innerHTML = "";
     document.getElementById("spd").innerHTML = "";
     document.getElementById("spe").innerHTML = "";
-    
+
     document.getElementById("form1name").innerHTML = "";
     clearIcon("form1icon");
     document.getElementById("form1type1").innerHTML = "";
@@ -507,12 +507,12 @@ function clearAbilDesc(idName) {
 }
 //Fill in main form. Runs when a Pokemon is selected.
 function saveVar() {
-    var pkmn = document.getElementById("myInput").value;
+    var pkmn = document.getElementById("myInput").value.toUpperCase();
     $.getJSON("./data/pokemon.json", function(json) {
         for (var i = 0; i < json.length; ++i) {
-            if (pkmn == json[i].name) {
-                clearAllForms(); 
-                
+            if (pkmn == json[i].name.toUpperCase()) {
+                clearAllForms();
+
                 //IF NO FORMS. Use 3 columns and put the single form in the middle column (form1 column)
                 //Definitely a better way to do this but... for now.
                 if (json[i].forms[0] == "NONE") {
@@ -652,11 +652,11 @@ function saveVar() {
                         }
                     }
                 }
-            
-            } 
-        }  
-    });   
-} 
+
+            }
+        }
+    });
+}
 
 function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
@@ -697,7 +697,7 @@ function autocomplete(inp, arr) {
             });
             a.appendChild(b);
             numSuggestions++;
-            } 
+            }
         }
     });
     /*execute a function presses a key on the keyboard:*/
