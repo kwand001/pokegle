@@ -321,27 +321,27 @@
 },
 {
     "name": "Galarian Articuno",
-    "id": "NONE",
+    "id": "144-g",
     "type":["psychic", "flying"],
     "ability":["competitive"],
     "hiddenability": "NONE",
-    "stats":[0, 0, 0, 0, 0, 0]
+    "stats":[90, 85, 85, 125, 100, 95]
 },
 {
     "name": "Galarian Zapdos",
-    "id": "NONE",
+    "id": "145-g",
     "type":["fighting", "flying"],
     "ability":["defiant"],
     "hiddenability": "NONE",
-    "stats":[0, 0, 0, 0, 0, 0]
+    "stats":[90, 125, 90, 85, 90, 100]
 },
 {
     "name": "Galarian Moltres",
-    "id": "NONE",
+    "id": "146-g",
     "type":["dark", "flying"],
     "ability":["berserk"],
     "hiddenability": "NONE",
-    "stats":[0, 0, 0, 0, 0, 0]
+    "stats":[90, 85, 90, 100, 125, 90]
 },
 {
     "name": "Mega Mewtwo X",
@@ -1142,5 +1142,21 @@
     "ability":["unseen fist"],
     "hiddenability": "NONE",
     "stats":[100, 130, 100, 63, 60, 97]
+},
+{
+    "name": "Ice Rider Calyrex",
+    "id": "898-i",
+    "type":["psychic", "ice"],
+    "ability":["chilling neigh"],
+    "hiddenability": "NONE",
+    "stats":[100, 165, 150, 85, 130, 50]
+},
+{
+    "name": "Shadow Rider Calyrex",
+    "id": "898-s",
+    "type":["psychic", "ghost"],
+    "ability":["grim neigh"],
+    "hiddenability": "NONE",
+    "stats":[100, 85, 80, 165, 100, 150]
 }
 ]

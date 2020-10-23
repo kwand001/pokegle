@@ -1042,5 +1042,21 @@
     {
         "name": "zen mode",
         "description": "Changes the Pokémon's shape when HP is half or less. "
+    },
+    {
+        "name": "transistor",
+        "description": "Powers up Electric-type moves."
+    },
+    {
+        "name": "dragon's maw",
+        "description": "Powers up Dragon-type moves."
+    },
+    {
+        "name": "chilling neigh",
+        "description": "When the Pokemon knocks out a target, it utters a chilling neigh, which boosts its Attack stat."
+    },
+    {
+        "name": "grim neigh",
+        "description": "When the Pokemon knocks out a target, it utters a terryifying neigh, which boosts its Special Attack stat."
     }
 ]
