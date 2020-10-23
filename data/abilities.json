@@ -1058,5 +1058,9 @@
     {
         "name": "grim neigh",
         "description": "When the Pokemon knocks out a target, it utters a terryifying neigh, which boosts its Special Attack stat."
+    },
+    {
+        "name": "curious medicine",
+        "description": "When the Pokemon is brought into battle, any stat alterations of allies are removed."
     }
 ]

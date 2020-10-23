@@ -369,11 +369,11 @@
 },
 {
     "name": "Galarian Slowking",
-    "id": "NONE",
+    "id": "199-g",
     "type":["poison", "psychic"],
-    "ability":["curious medicine"],
-    "hiddenability": "NONE",
-    "stats":[0, 0, 0, 0, 0, 0]
+    "ability":["curious medicine", "own tempo"],
+    "hiddenability": "regenerator",
+    "stats":[95, 65, 80, 110, 110, 30]
 },
 {
     "name": "Mega Steelix",
