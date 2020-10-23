@@ -1062,5 +1062,9 @@
     {
         "name": "curious medicine",
         "description": "When the Pokemon is brought into battle, any stat alterations of allies are removed."
+    },
+    {
+        "name": "as one",
+        "description": "This ability combines the effects of both Calyrex's Unnerve ability and Glastrier's/Spectrier's Chilling Neigh/Grim Neigh ability."
     }
 ]

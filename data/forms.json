@@ -1147,7 +1147,7 @@
     "name": "Ice Rider Calyrex",
     "id": "898-i",
     "type":["psychic", "ice"],
-    "ability":["chilling neigh"],
+    "ability":["as one"],
     "hiddenability": "NONE",
     "stats":[100, 165, 150, 85, 130, 50]
 },
@@ -1155,7 +1155,7 @@
     "name": "Shadow Rider Calyrex",
     "id": "898-s",
     "type":["psychic", "ghost"],
-    "ability":["grim neigh"],
+    "ability":["as one"],
     "hiddenability": "NONE",
     "stats":[100, 85, 80, 165, 100, 150]
 }
