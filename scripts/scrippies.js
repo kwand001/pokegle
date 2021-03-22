@@ -261,7 +261,7 @@ function getForm3(formName) {
         }
     });
 }
-//Fill in Rotom's 4th form
+//Fill in Form4 column
 function getForm4(formName) {
     document.getElementById("form5").attributes[2].value = "display: block;";
     $.getJSON("./data/forms.json", function(json) {
@@ -324,7 +324,7 @@ function getForm4(formName) {
         }
     });
 }
-//Fill in Rotom's 5th form
+//Fill in Form5 column
 function getForm5(formName) {
     document.getElementById("form6").attributes[2].value = "display: block;";
     $.getJSON("./data/forms.json", function(json) {

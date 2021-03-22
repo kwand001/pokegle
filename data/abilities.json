@@ -324,7 +324,7 @@
         "description": "Doubles the Pokémon's Attack stat. "
     },
     {
-        "name": "hungry switch",
+        "name": "hunger switch",
         "description": "The Pokémon changes its form, alternating between its Full Belly Mode and Hangry Mode after the end of each turn."
     },
     {
