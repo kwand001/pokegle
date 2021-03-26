@@ -1,3 +1,81 @@
+/* --------------------------------------STATS-------------------------------------- */
+.atks {
+    background-color: #ffd4db;
+    font-size: 16px;
+}
+
+.defs {
+    background-color:#ddfbb6;
+    font-size: 16px;
+}
+
+.hps {
+    background-color: pink;
+    font-size: 16px;
+}
+
+.spas {
+    background-color: #efcffb;
+    font-size: 16px;
+}
+
+.spds {
+    background-color: #cde7fa;
+    font-size: 16px;
+}
+
+.spes {
+    background-color: #fff878;
+    font-size: 16px;
+}
+
+/* --------------------------------------ABILITIES-------------------------------------- */
+
+.abil1 {
+    margin: 0px;
+    background-color : rgb(231, 231, 231);
+    font-size: 16px;
+    display: inline-block;
+    width: 120px;
+    text-align: center;
+}
+
+.abil1:hover {
+    cursor: default;
+}
+
+.abil2 {
+    margin: 0px;
+    background-color: rgb(192, 192, 192);
+    font-size: 16px;
+    display: inline-block;
+    width: 120px;
+    text-align: center;
+}
+
+.abil2:hover {
+    cursor: default;
+}
+
+.hidabils {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    background-color: rgb(255, 228, 249);
+    font-size: 16px;
+    display: inline-block;
+    width: 120px;
+    text-align: center;
+}
+
+.hidabils:hover {
+    cursor: default;
+}
+
+
+
+/* ------------------------------------------------------------------------------------------*/
+
 * {
     box-sizing: border-box;
 }
@@ -76,26 +154,12 @@ input[type=submit]:hover {
 
 }
 
-.abil1 {
-    margin: 0px;
-    background-color : rgb(231, 231, 231);
-    font-size: 18px;
-}
 
-.abil2 {
-    margin: 0px;
-    background-color: rgb(192, 192, 192);
-    font-size: 18px;
-}
 
 .altform {
     margin-left: 10%;
 }
 
-.atks {
-    background-color: #ffd4db;
-    font-size: 18px;
-}
 .autocomplete-items div {
     padding: 5px;
     cursor: pointer;
@@ -104,6 +168,12 @@ input[type=submit]:hover {
     font-family: 'Quicksand', sans-serif;
     color: #838383;
 }
+
+/* .col {
+    border: solid;
+    border-color: #f06a73;
+    border-radius: 5%;
+} */
 
 .container {
     position: relative;
@@ -114,32 +184,14 @@ input[type=submit]:hover {
 
 }
 
-.defs {
-    background-color:#ddfbb6;
-    font-size: 18px;
-}
-
 .footer {
     bottom: 0%;
     left: 90%;
     position: fixed;
 }
 
-.hidabils {
-    margin-top: 0px;
-    margin-right: 0px;
-    margin-left: 0px;
-    background-color: rgb(255, 228, 249);
-    font-size: 18px;
-}
-
-.hps {
-    background-color: #ffcf78;
-    font-size: 18px;
-}
-
 .icons {
-    display:inline-block;
+    /* display:inline-block; */
 }
 
 .maintext {
@@ -168,6 +220,10 @@ input[type=submit]:hover {
     padding: 2%;
 }
 
+.nav-link:hover {
+    cursor: pointer;
+}
+
 .pokeball {
     padding: 0;
    width: 15%;
@@ -181,24 +237,13 @@ input[type=submit]:hover {
     font-size: 18px;
 }
 
-.spas {
-    background-color: #efcffb;
-    font-size: 18px;
-}
-
-.spds {
-    background-color: #cde7fa;
-    font-size: 18px;
-}
-
-.spes {
-    background-color: #fff878;
-    font-size: 18px;
-}
-
 .types {
     display: inline-block;
+    border: none;
+    border-radius: 10%;
     padding: 5px;
+    text-align: center;
+    width: 70px;
 }
 
 .the-e {

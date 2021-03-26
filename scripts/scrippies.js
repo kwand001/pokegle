@@ -116,21 +116,27 @@ function getForm1(formName) {
                 }
 
                 if (json[i].hiddenability != "NONE") {
-                    document.getElementById("form1ha").innerHTML = "HA: " + json[i].hiddenability;
+                    document.getElementById("form1ha").innerHTML = json[i].hiddenability;
                     abilDesc(json[i].hiddenability, "form1ha");
                 }
                 else {
 
-                    document.getElementById("form1ha").innerHTML = "HA: -";
+                    document.getElementById("form1ha").innerHTML = "-";
                     clearAbilDesc("form1ha");
                 }
                 //STATS-------------------------------------------------------------------------------------------------------
                 document.getElementById("form1hp").innerHTML = "HP: " + json[i].stats[0];
+                setStats("form1hp", json[i].stats[0]);
                 document.getElementById("form1atk").innerHTML = "ATK: " + json[i].stats[1];
+                setStats("form1atk", json[i].stats[1]);
                 document.getElementById("form1def").innerHTML = "DEF: " + json[i].stats[2];
+                setStats("form1def", json[i].stats[2]);
                 document.getElementById("form1spa").innerHTML = "SpA: " + json[i].stats[3];
+                setStats("form1spa", json[i].stats[3]);
                 document.getElementById("form1spd").innerHTML = "SpD: " + json[i].stats[4];
+                setStats("form1spd", json[i].stats[4]);
                 document.getElementById("form1spe").innerHTML = "SPE: " + json[i].stats[5];
+                setStats("form1spe", json[i].stats[5]);
             }
         }
     });
@@ -179,21 +185,27 @@ function getForm2(formName) {
                 }
 
                 if (json[i].hiddenability != "NONE") {
-                    document.getElementById("form2ha").innerHTML = "HA: " + json[i].hiddenability;
+                    document.getElementById("form2ha").innerHTML = json[i].hiddenability;
                     abilDesc(json[i].hiddenability, "form2ha");
                 }
                 else {
 
-                    document.getElementById("form2ha").innerHTML = "HA: -";
+                    document.getElementById("form2ha").innerHTML = "-";
                     clearAbilDesc("form2ha");
                 }
                 //STATS-------------------------------------------------------------------------------------------------------
                 document.getElementById("form2hp").innerHTML = "HP: " + json[i].stats[0];
+                setStats("form2hp", json[i].stats[0]);
                 document.getElementById("form2atk").innerHTML = "ATK: " + json[i].stats[1];
+                setStats("form2atk", json[i].stats[1]);
                 document.getElementById("form2def").innerHTML = "DEF: " + json[i].stats[2];
+                setStats("form2def", json[i].stats[2]);
                 document.getElementById("form2spa").innerHTML = "SpA: " + json[i].stats[3];
+                setStats("form2spa", json[i].stats[3]);
                 document.getElementById("form2spd").innerHTML = "SpD: " + json[i].stats[4];
+                setStats("form2spd", json[i].stats[4]);
                 document.getElementById("form2spe").innerHTML = "SPE: " + json[i].stats[5];
+                setStats("form2spe", json[i].stats[5]);
             }
         }
     });
@@ -242,21 +254,27 @@ function getForm3(formName) {
                 }
 
                 if (json[i].hiddenability != "NONE") {
-                    document.getElementById("form3ha").innerHTML = "HA: " + json[i].hiddenability;
+                    document.getElementById("form3ha").innerHTML = json[i].hiddenability;
                     abilDesc(json[i].hiddenability, "form3ha");
                 }
                 else {
 
-                    document.getElementById("form3ha").innerHTML = "HA: -";
+                    document.getElementById("form3ha").innerHTML = "-";
                     clearAbilDesc("form3ha");
                 }
                 //STATS-------------------------------------------------------------------------------------------------------
                 document.getElementById("form3hp").innerHTML = "HP: " + json[i].stats[0];
+                setStats("form3hp", json[i].stats[0]);
                 document.getElementById("form3atk").innerHTML = "ATK: " + json[i].stats[1];
+                setStats("form3atk", json[i].stats[1]);
                 document.getElementById("form3def").innerHTML = "DEF: " + json[i].stats[2];
+                setStats("form3def", json[i].stats[2]);
                 document.getElementById("form3spa").innerHTML = "SpA: " + json[i].stats[3];
+                setStats("form3spa", json[i].stats[3]);
                 document.getElementById("form3spd").innerHTML = "SpD: " + json[i].stats[4];
+                setStats("form3spd", json[i].stats[4]);
                 document.getElementById("form3spe").innerHTML = "SPE: " + json[i].stats[5];
+                setStats("form3spe", json[i].stats[5]);
             }
         }
     });
@@ -305,21 +323,27 @@ function getForm4(formName) {
                 }
 
                 if (json[i].hiddenability != "NONE") {
-                    document.getElementById("form4ha").innerHTML = "HA: " + json[i].hiddenability;
+                    document.getElementById("form4ha").innerHTML = json[i].hiddenability;
                     abilDesc(json[i].hiddenability, "form4ha");
                 }
                 else {
 
-                    document.getElementById("form4ha").innerHTML = "HA: -";
+                    document.getElementById("form4ha").innerHTML = "-";
                     clearAbilDesc("form4ha");
                 }
                 //STATS-------------------------------------------------------------------------------------------------------
                 document.getElementById("form4hp").innerHTML = "HP: " + json[i].stats[0];
+                setStats("form4hp", json[i].stats[0]);
                 document.getElementById("form4atk").innerHTML = "ATK: " + json[i].stats[1];
+                setStats("form4atk", json[i].stats[1]);
                 document.getElementById("form4def").innerHTML = "DEF: " + json[i].stats[2];
+                setStats("form4def", json[i].stats[2]);
                 document.getElementById("form4spa").innerHTML = "SpA: " + json[i].stats[3];
+                setStats("form4spa", json[i].stats[3]);
                 document.getElementById("form4spd").innerHTML = "SpD: " + json[i].stats[4];
+                setStats("form4spd", json[i].stats[4]);
                 document.getElementById("form4spe").innerHTML = "SPE: " + json[i].stats[5];
+                setStats("form4spe", json[i].stats[5]);
             }
         }
     });
@@ -368,21 +392,27 @@ function getForm5(formName) {
                 }
 
                 if (json[i].hiddenability != "NONE") {
-                    document.getElementById("form5ha").innerHTML = "HA: " + json[i].hiddenability;
+                    document.getElementById("form5ha").innerHTML = json[i].hiddenability;
                     abilDesc(json[i].hiddenability, "form5ha");
                 }
                 else {
 
-                    document.getElementById("form5ha").innerHTML = "HA: -";
+                    document.getElementById("form5ha").innerHTML = "-";
                     clearAbilDesc("form5ha");
                 }
                 //STATS-------------------------------------------------------------------------------------------------------
                 document.getElementById("form5hp").innerHTML = "HP: " + json[i].stats[0];
+                setStats("form5hp", json[i].stats[0]);
                 document.getElementById("form5atk").innerHTML = "ATK: " + json[i].stats[1];
+                setStats("form5atk", json[i].stats[1]);
                 document.getElementById("form5def").innerHTML = "DEF: " + json[i].stats[2];
+                setStats("form5def", json[i].stats[2]);
                 document.getElementById("form5spa").innerHTML = "SpA: " + json[i].stats[3];
+                setStats("form5spa", json[i].stats[3]);
                 document.getElementById("form5spd").innerHTML = "SpD: " + json[i].stats[4];
+                setStats("form5spd", json[i].stats[4]);
                 document.getElementById("form5spe").innerHTML = "SPE: " + json[i].stats[5];
+                setStats("form5spe", json[i].stats[5]);
             }
         }
     });
@@ -421,9 +451,33 @@ function clearAllForms() {
 function clearAbilDesc(idName) {
     document.getElementById(idName).attributes[3].value = "";
 }
+
+function setStats(place, statValue) {
+
+    pct = (statValue / 255) * 100;
+    if (pct < 17) {
+        pct = 17;
+    }
+    var statStat = "width: " + pct + "%;";
+    document.getElementById(place).attributes[2].value = statStat; 
+}
+
+function searchPkmn() {
+    saveVar(false);
+}
+
+function randomPkmn() {
+    saveVar(true);
+}
+
 //Fill in main form. Runs when a Pokemon is selected.
-function saveVar() {
+function saveVar(poop) {
+    
     var pkmn = document.getElementById("myInput").value.toUpperCase();
+    if (poop) {
+        var num = Math.floor(Math.random() * arr.length);
+        pkmn = (arr[num]).toUpperCase();
+    }
     $.getJSON("./data/pokemon.json", function(json) {
         for (var i = 0; i < json.length; ++i) {
             if (pkmn == json[i].name.toUpperCase()) {
@@ -432,7 +486,7 @@ function saveVar() {
                 //Definitely a better way to do this but... for now.
                 if (json[i].forms[0] == "NONE") {
                      //NAME--------------------------------------------------------------------------------------------------------
-                     document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-1 row-cols-md-3";
+                     document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-1 row-cols-md-2";
                      document.getElementById("form2").attributes[2].value = "display: block;";
                      document.getElementById("form1name").innerHTML = json[i].name;
                     if (json[i].id != "NONE") {
@@ -468,20 +522,26 @@ function saveVar() {
                         clearAbilDesc("form1abil2");
                     }
                     if (json[i].hiddenability != "NONE") {
-                        document.getElementById("form1ha").innerHTML = "HA: " + json[i].hiddenability;
+                        document.getElementById("form1ha").innerHTML = json[i].hiddenability;
                         abilDesc(json[i].hiddenability, "form1ha");
                     }
                     else {
-                        document.getElementById("form1ha").innerHTML = "HA: -";
+                        document.getElementById("form1ha").innerHTML = "-";
                         clearAbilDesc("form1ha");
                     }
                     //STATS-------------------------------------------------------------------------------------------------------
                     document.getElementById("form1hp").innerHTML = "HP: " + json[i].stats[0];
+                    setStats("form1hp", json[i].stats[0]);
                     document.getElementById("form1atk").innerHTML = "ATK: " + json[i].stats[1];
+                    setStats("form1atk", json[i].stats[1]);
                     document.getElementById("form1def").innerHTML = "DEF: " + json[i].stats[2];
+                    setStats("form1def", json[i].stats[2]);
                     document.getElementById("form1spa").innerHTML = "SpA: " + json[i].stats[3];
+                    setStats("form1spa", json[i].stats[3]);
                     document.getElementById("form1spd").innerHTML = "SpD: " + json[i].stats[4];
+                    setStats("form1spd", json[i].stats[4]);
                     document.getElementById("form1spe").innerHTML = "SPE: " + json[i].stats[5];
+                    setStats("form1spe", json[i].stats[5]);
                 }
                 else {
                     //NAME--------------------------------------------------------------------------------------------------------
@@ -528,38 +588,44 @@ function saveVar() {
                     }
 
                     if (json[i].hiddenability != "NONE") {
-                        document.getElementById("hiddenabil").innerHTML = "HA: " + json[i].hiddenability;
+                        document.getElementById("hiddenabil").innerHTML = json[i].hiddenability;
                         abilDesc(json[i].hiddenability, "hiddenabil");
                     }
                     else {
-                        document.getElementById("hiddenabil").innerHTML = "HA: -";
+                        document.getElementById("hiddenabil").innerHTML = "-";
                         clearAbilDesc("hiddenabil");
                     }
                     //STATS-------------------------------------------------------------------------------------------------------
                     document.getElementById("hp").innerHTML = "HP: " + json[i].stats[0];
+                    setStats("hp", json[i].stats[0]);
                     document.getElementById("atk").innerHTML = "ATK: " + json[i].stats[1];
+                    setStats("atk", json[i].stats[1]);
                     document.getElementById("def").innerHTML = "DEF: " + json[i].stats[2];
+                    setStats("def", json[i].stats[2]);
                     document.getElementById("spa").innerHTML = "SpA: " + json[i].stats[3];
+                    setStats("spa", json[i].stats[3]);
                     document.getElementById("spd").innerHTML = "SpD: " + json[i].stats[4];
+                    setStats("spd", json[i].stats[4]);
                     document.getElementById("spe").innerHTML = "SPE: " + json[i].stats[5];
-
+                    setStats("spe", json[i].stats[5]);
+                    
                     //FORMS-------------------------------------------------------------------------------------------------------
                     if (json[i].forms[0] != "NONE") {
-                        document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-2 row-cols-md-2";
+                        document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-1 row-cols-md-2";
                         getForm1(json[i].forms[0]);
 
                         if (json[i].forms.length == 2) {
-                            document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-2 row-cols-md-3";
+                            document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-1 row-cols-md-3";
                             getForm2(json[i].forms[1]);
                         }
                         else if (json[i].forms.length == 3) {
-                            document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-2 row-cols-md-4";
+                            document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-1 row-cols-md-2";
                             getForm2(json[i].forms[1]);
                             getForm3(json[i].forms[2]);
                         }
                         //literally only for Rotom......
                         else if (json[i].forms.length == 5) {
-                            document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-2 row-cols-md-3";
+                            document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3";
                             getForm2(json[i].forms[1]);
                             getForm3(json[i].forms[2]);
                             getForm4(json[i].forms[3]);
@@ -571,6 +637,7 @@ function saveVar() {
             }
         }
     });
+    document.getElementById("myInput").value = "";
 }
 
 function autocomplete(inp, arr) {

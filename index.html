@@ -34,12 +34,13 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/sawri/pokegle">github</a>
-                </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" href="">random</a>
+                    <a class="nav-link" onclick="randomPkmn()">random</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/sawri/pokegle">github</a>
+                </li>
+
+                <!--<li class="nav-item">
                     <a class="nav-link" href="">compare</a>
                 </li>-->
                 </ul>
@@ -61,7 +62,7 @@
                     </div>
                 </div>
                 <div class="col-0">
-                    <input type="submit" value="go!" onclick="saveVar()">
+                    <input type="submit" value="go!" onclick="searchPkmn()">
                 </div>
                     </form> 
             </div>
@@ -75,105 +76,111 @@
 
                 <!-- Main Form -->
                 <div class="col" id="form1" style="display: block;"> 
-                    <p id="type1" class="types"></p> 
-                    <p id="type2" class="types"></p>
                     <img id="pokeicon" class="icons" src="">
+                    <p id="type1" class="types rounded"></p> 
+                    <p id="type2" class="types rounded"></p>
+                    
                     <p id="pokename" class="names"></p>
-                    <p id="pokeabil1" class="abil1 " data-toggle="tooltip" data-original-title="placeholder"></p>
-                    <p id="pokeabil2" class="abil2" data-toggle="tooltip" data-original-title=""></p>
-                    <p id="hiddenabil" class="hidabils" data-toggle="tooltip" data-original-title=""></p>
-                    <p id="hp" class="hps"></p>
-                    <p id="atk" class="atks"></p>
-                    <p id="def" class="defs"></p>
-                    <p id="spa" class="spas"></p>
-                    <p id="spd" class="spds"></p>
-                    <p id="spe" class="spes"></p>     
+                    <p id="pokeabil1" class="abil1 rounded" data-toggle="tooltip" data-original-title="placeholder"></p>
+                    <p id="pokeabil2" class="abil2 rounded" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="hiddenabil" class="hidabils rounded" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="hp" class="hps rounded" style="width:0%;"></p>
+                    <p id="atk" class="atks rounded" style="width:0%;"></p>
+                    <p id="def" class="defs rounded" style="width:0%;"></p>
+                    <p id="spa" class="spas rounded" style="width:0%;"></p>
+                    <p id="spd" class="spds rounded" style="width:0%;"></p>
+                    <p id="spe" class="spes rounded" style="width:0%;"></p>     
                 </div>
                 
                 <!-- Alternate Form 1 -->
                 <div class="col" id="form2" style="display: none;">
+                    <img id="form1icon" class="icons" src="">
                     <p id="form1type1" class="types"></p> 
                     <p id="form1type2" class="types"></p>
-                    <img id="form1icon" class="icons" src="">
+                    
                     <p id="form1name" class="names"></p>
-                    <p id="form1abil1" class="abil1" data-toggle="tooltip" data-original-title="placeholder"></p>
-                    <p id="form1abil2" class="abil2" data-toggle="tooltip" data-original-title=""></p>
-                    <p id="form1ha" class="hidabils" data-toggle="tooltip" data-original-title=""></p>
-                    <p id="form1hp" class="hps"></p>
-                    <p id="form1atk" class="atks"></p>
-                    <p id="form1def" class="defs"></p>
-                    <p id="form1spa" class="spas"></p>
-                    <p id="form1spd" class="spds"></p>
-                    <p id="form1spe" class="spes"></p>
+                    <p id="form1abil1" class="abil1 rounded" data-toggle="tooltip" data-original-title="placeholder"></p>
+                    <p id="form1abil2" class="abil2 rounded" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="form1ha" class="hidabils rounded" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="form1hp" class="hps rounded" style="width:0%;"></p>
+                    <p id="form1atk" class="atks rounded" style="width:0%;"></p>
+                    <p id="form1def" class="defs rounded" style="width:0%;"></p>
+                    <p id="form1spa" class="spas rounded" style="width:0%;"></p>
+                    <p id="form1spd" class="spds rounded" style="width:0%;"></p>
+                    <p id="form1spe" class="spes rounded" style="width:0%;"></p>
                 </div>
 
                 <!-- Alternate Form 2 -->
                 <div class="col" id="form3" style="display: none;"> 
+                    <img id="form2icon" class="icons" src="">
                     <p id="form2type1" class="types"></p> 
                     <p id="form2type2" class="types"></p>
-                    <img id="form2icon" class="icons" src="">
+                    
                     <p id="form2name" class="names"></p>
-                    <p id="form2abil1" class="abil1" data-toggle="tooltip" data-original-title="placeholder"></p>
-                    <p id="form2abil2" class="abil2" data-toggle="tooltip" data-original-title=""></p>
-                    <p id="form2ha" class="hidabils" data-toggle="tooltip" data-original-title=""></p>
-                    <p id="form2hp" class="hps"></p>
-                    <p id="form2atk" class="atks"></p>
-                    <p id="form2def" class="defs"></p>
-                    <p id="form2spa" class="spas"></p>
-                    <p id="form2spd" class="spds"></p>
-                    <p id="form2spe" class="spes"></p>
+                    <p id="form2abil1" class="abil1 rounded" data-toggle="tooltip" data-original-title="placeholder"></p>
+                    <p id="form2abil2" class="abil2 rounded" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="form2ha" class="hidabils rounded" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="form2hp" class="hps rounded" style="width:0%;"></p>
+                    <p id="form2atk" class="atks rounded" style="width:0%;"></p>
+                    <p id="form2def" class="defs rounded" style="width:0%;"></p>
+                    <p id="form2spa" class="spas rounded" style="width:0%;"></p>
+                    <p id="form2spd" class="spds rounded" style="width:0%;"></p>
+                    <p id="form2spe" class="spes rounded" style="width:0%;"></p>
                 </div>
 
                 <!-- Alternate Form 3 -->
                 <div class="col" id="form4" style="display: none;"> 
+                    <img id="form3icon" class="icons" src="">
                     <p id="form3type1" class="types"></p> 
                     <p id="form3type2" class="types"></p>
-                    <img id="form3icon" class="icons" src="">
+                    
                     <p id="form3name" class="names"></p>
-                    <p id="form3abil1" class="abil1" data-toggle="tooltip" data-original-title="placeholder"></p>
-                    <p id="form3abil2" class="abil2" data-toggle="tooltip" data-original-title=""></p>
-                    <p id="form3ha" class="hidabils" data-toggle="tooltip" data-original-title=""></p>
-                    <p id="form3hp" class="hps"></p>
-                    <p id="form3atk" class="atks"></p>
-                    <p id="form3def" class="defs"></p>
-                    <p id="form3spa" class="spas"></p>
-                    <p id="form3spd" class="spds"></p>
-                    <p id="form3spe" class="spes"></p>
+                    <p id="form3abil1" class="abil1 rounded" data-toggle="tooltip" data-original-title="placeholder"></p>
+                    <p id="form3abil2" class="abil2 rounded" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="form3ha" class="hidabils rounded" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="form3hp" class="hps rounded" style="width:0%;"></p>
+                    <p id="form3atk" class="atks rounded" style="width:0%;"></p>
+                    <p id="form3def" class="defs rounded" style="width:0%;"></p>
+                    <p id="form3spa" class="spas rounded" style="width:0%;"></p>
+                    <p id="form3spd" class="spds rounded" style="width:0%;"></p>
+                    <p id="form3spe" class="spes rounded" style="width:0%;"></p>
                 </div>
                 <!-- Thanks to Rotom having FIVE alternate forms, we need a few more columns. :)  -->
 
                 <!-- Alternate Form 4/Rotom Form 4 -->
                 <div class="col" id="form5" style="display: none;"> 
+                    <img id="form4icon" class="icons" src="">
                     <p id="form4type1" class="types"></p> 
                     <p id="form4type2" class="types"></p>
-                    <img id="form4icon" class="icons" src="">
+                    
                     <p id="form4name" class="names"></p>
-                    <p id="form4abil1" class="abil1" data-toggle="tooltip" data-original-title="placeholder"></p>
-                    <p id="form4abil2" class="abil2" data-toggle="tooltip" data-original-title=""></p>
-                    <p id="form4ha" class="hidabils" data-toggle="tooltip" data-original-title=""></p>
-                    <p id="form4hp" class="hps"></p>
-                    <p id="form4atk" class="atks"></p>
-                    <p id="form4def" class="defs"></p>
-                    <p id="form4spa" class="spas"></p>
-                    <p id="form4spd" class="spds"></p>
-                    <p id="form4spe" class="spes"></p>
+                    <p id="form4abil1" class="abil1 rounded" data-toggle="tooltip" data-original-title="placeholder"></p>
+                    <p id="form4abil2" class="abil2 rounded" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="form4ha" class="hidabils rounded" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="form4hp" class="hps rounded" style="width:0%;"></p>
+                    <p id="form4atk" class="atks rounded" style="width:0%;"></p>
+                    <p id="form4def" class="defs rounded" style="width:0%;"></p>
+                    <p id="form4spa" class="spas rounded" style="width:0%;"></p>
+                    <p id="form4spd" class="spds rounded" style="width:0%;"></p>
+                    <p id="form4spe" class="spes rounded" style="width:0%;"></p>
                 </div>
 
                 <!-- Alternate Form 5/Rotom Form 5 -->
                 <div class="col" id="form6" style="display: none;"> 
+                    <img id="form5icon" class="icons" src="">
                     <p id="form5type1" class="types"></p> 
                     <p id="form5type2" class="types"></p>
-                    <img id="form5icon" class="icons" src="">
+                    
                     <p id="form5name" class="names"></p>
-                    <p id="form5abil1" class="abil1" data-toggle="tooltip" data-original-title="placeholder"></p>
-                    <p id="form5abil2" class="abil2" data-toggle="tooltip" data-original-title=""></p>
-                    <p id="form5ha" class="hidabils" data-toggle="tooltip" data-original-title=""></p>
-                    <p id="form5hp" class="hps"></p>
-                    <p id="form5atk" class="atks"></p>
-                    <p id="form5def" class="defs"></p>
-                    <p id="form5spa" class="spas"></p>
-                    <p id="form5spd" class="spds"></p>
-                    <p id="form5spe" class="spes"></p>
+                    <p id="form5abil1" class="abil1 rounded" data-toggle="tooltip" data-original-title="placeholder"></p>
+                    <p id="form5abil2" class="abil2 rounded" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="form5ha" class="hidabils rounded" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="form5hp" class="hps rounded" style="width:0%;"></p>
+                    <p id="form5atk" class="atks rounded" style="width:0%;"></p>
+                    <p id="form5def" class="defs rounded" style="width:0%;"></p>
+                    <p id="form5spa" class="spas rounded" style="width:0%;"></p>
+                    <p id="form5spd" class="spds rounded" style="width:0%;"></p>
+                    <p id="form5spe" class="spes rounded" style="width:0%;"></p>
                 </div>
             </div>
         </div>
