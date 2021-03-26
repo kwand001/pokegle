@@ -9,5 +9,3 @@ Pokegle is a webapp that allows you to look up the type, abilities, ability desc
 Add an option to compare two pokemon.
 
 Add a dark mode. 
-
-Add a "random" button.
