@@ -8,7 +8,9 @@ Right now, all you have to do is type in the pokémon's name and you'll get all 
 
 And, rest assured that this site will be updated when stats are changed and new pokémon are added!
 
-Please let me know if there are any features you would like to see added, or if you encounter any incorrect information! Enjoy using Pokégle!
+Please let me know if there are any features you would like to see added, or if you encounter any issues or incorrect information.
+
+Enjoy using Pokégle!
 
 
 # Current Known Issues:
@@ -18,3 +20,5 @@ Please let me know if there are any features you would like to see added, or if 
 Add an option to compare two pokemon.
 
 Add a dark mode. 
+
+Add a way to show a pokémon's evolutions/pre-evolutions.
