@@ -5,10 +5,10 @@
         <title>
             Pokégle!
         </title>
-        <!-- MY CSS yo -->
+        <!-- MY CSS -->
         <link rel="stylesheet" href="css\style.css"> 
         <!-- BOOTSTRAP -->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
         <!-- FONTS -->
         <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Itim&family=Quicksand&display=swap" rel="stylesheet">
         <!-- FAVICON -->
@@ -50,18 +50,20 @@
     <!-- TITLE -->
         <div class="container"> 
             <div class="row justify-content-center">
+                <div class="col-auto">
                 <a href=""><h1 class="maintext">POK<span class="the-e">é</span>GLE!</h1></a>
+                </div>
             </div>
 
     <!-- SEARCH BAR + GO BUTTON -->
             <div class="row justify-content-center">
-                <div class="col-6">
+                <div class="col-md-5 col-7">
                     <form autocomplete="off" action="/" method="get" onsubmit="return false;">
                     <div class="autocomplete">
                         <input id="myInput" type="text" name="selectedPokemon" placeholder="type in a pokemon to view their type, stats, and abilities!" autofocus height="40">
                     </div>
                 </div>
-                <div class="col-0">
+                <div class="col-md-1 col-3">
                     <input type="submit" value="go!" onclick="searchPkmn()">
                 </div>
                     </form> 
@@ -81,9 +83,9 @@
                     <p id="type2" class="types rounded"></p>
                     
                     <p id="pokename" class="names"></p>
-                    <p id="pokeabil1" class="abil1 rounded" data-toggle="tooltip" data-original-title="placeholder"></p>
-                    <p id="pokeabil2" class="abil2 rounded" data-toggle="tooltip" data-original-title=""></p>
-                    <p id="hiddenabil" class="hidabils rounded" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="pokeabil1" class="abil1 rounded" data-bs-toggle="tooltip" data-bs-original-title="placeholder"></p>
+                    <p id="pokeabil2" class="abil2 rounded" data-bs-toggle="tooltip" data-bs-original-title=""></p>
+                    <p id="hiddenabil" class="hidabils rounded" data-bs-toggle="tooltip" data-bs-original-title=""></p>
                     <p id="hp" class="hps rounded" style="width:0%;"></p>
                     <p id="atk" class="atks rounded" style="width:0%;"></p>
                     <p id="def" class="defs rounded" style="width:0%;"></p>
@@ -99,9 +101,9 @@
                     <p id="form1type2" class="types"></p>
                     
                     <p id="form1name" class="names"></p>
-                    <p id="form1abil1" class="abil1 rounded" data-toggle="tooltip" data-original-title="placeholder"></p>
-                    <p id="form1abil2" class="abil2 rounded" data-toggle="tooltip" data-original-title=""></p>
-                    <p id="form1ha" class="hidabils rounded" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="form1abil1" class="abil1 rounded" data-bs-toggle="tooltip" data-bs-original-title="placeholder"></p>
+                    <p id="form1abil2" class="abil2 rounded" data-bs-toggle="tooltip" data-bs-original-title=""></p>
+                    <p id="form1ha" class="hidabils rounded" data-bs-toggle="tooltip" data-bs-original-title=""></p>
                     <p id="form1hp" class="hps rounded" style="width:0%;"></p>
                     <p id="form1atk" class="atks rounded" style="width:0%;"></p>
                     <p id="form1def" class="defs rounded" style="width:0%;"></p>
@@ -117,9 +119,9 @@
                     <p id="form2type2" class="types"></p>
                     
                     <p id="form2name" class="names"></p>
-                    <p id="form2abil1" class="abil1 rounded" data-toggle="tooltip" data-original-title="placeholder"></p>
-                    <p id="form2abil2" class="abil2 rounded" data-toggle="tooltip" data-original-title=""></p>
-                    <p id="form2ha" class="hidabils rounded" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="form2abil1" class="abil1 rounded" data-bs-toggle="tooltip" data-bs-original-title="placeholder"></p>
+                    <p id="form2abil2" class="abil2 rounded" data-bs-toggle="tooltip" data-bs-original-title=""></p>
+                    <p id="form2ha" class="hidabils rounded" data-bs-toggle="tooltip" data-bs-original-title=""></p>
                     <p id="form2hp" class="hps rounded" style="width:0%;"></p>
                     <p id="form2atk" class="atks rounded" style="width:0%;"></p>
                     <p id="form2def" class="defs rounded" style="width:0%;"></p>
@@ -135,9 +137,9 @@
                     <p id="form3type2" class="types"></p>
                     
                     <p id="form3name" class="names"></p>
-                    <p id="form3abil1" class="abil1 rounded" data-toggle="tooltip" data-original-title="placeholder"></p>
-                    <p id="form3abil2" class="abil2 rounded" data-toggle="tooltip" data-original-title=""></p>
-                    <p id="form3ha" class="hidabils rounded" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="form3abil1" class="abil1 rounded" data-bs-toggle="tooltip" data-bs-original-title="placeholder"></p>
+                    <p id="form3abil2" class="abil2 rounded" data-bs-toggle="tooltip" data-bs-original-title=""></p>
+                    <p id="form3ha" class="hidabils rounded" data-bs-toggle="tooltip" data-bs-original-title=""></p>
                     <p id="form3hp" class="hps rounded" style="width:0%;"></p>
                     <p id="form3atk" class="atks rounded" style="width:0%;"></p>
                     <p id="form3def" class="defs rounded" style="width:0%;"></p>
@@ -154,9 +156,9 @@
                     <p id="form4type2" class="types"></p>
                     
                     <p id="form4name" class="names"></p>
-                    <p id="form4abil1" class="abil1 rounded" data-toggle="tooltip" data-original-title="placeholder"></p>
-                    <p id="form4abil2" class="abil2 rounded" data-toggle="tooltip" data-original-title=""></p>
-                    <p id="form4ha" class="hidabils rounded" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="form4abil1" class="abil1 rounded" data-bs-toggle="tooltip" data-bs-original-title="placeholder"></p>
+                    <p id="form4abil2" class="abil2 rounded" data-bs-toggle="tooltip" data-bs-original-title=""></p>
+                    <p id="form4ha" class="hidabils rounded" data-bs-toggle="tooltip" data-bs-original-title=""></p>
                     <p id="form4hp" class="hps rounded" style="width:0%;"></p>
                     <p id="form4atk" class="atks rounded" style="width:0%;"></p>
                     <p id="form4def" class="defs rounded" style="width:0%;"></p>
@@ -172,9 +174,9 @@
                     <p id="form5type2" class="types"></p>
                     
                     <p id="form5name" class="names"></p>
-                    <p id="form5abil1" class="abil1 rounded" data-toggle="tooltip" data-original-title="placeholder"></p>
-                    <p id="form5abil2" class="abil2 rounded" data-toggle="tooltip" data-original-title=""></p>
-                    <p id="form5ha" class="hidabils rounded" data-toggle="tooltip" data-original-title=""></p>
+                    <p id="form5abil1" class="abil1 rounded" data-bs-toggle="tooltip" data-bs-original-title="placeholder"></p>
+                    <p id="form5abil2" class="abil2 rounded" data-bs-toggle="tooltip" data-bs-original-title=""></p>
+                    <p id="form5ha" class="hidabils rounded" data-bs-toggle="tooltip" data-bs-original-title=""></p>
                     <p id="form5hp" class="hps rounded" style="width:0%;"></p>
                     <p id="form5atk" class="atks rounded" style="width:0%;"></p>
                     <p id="form5def" class="defs rounded" style="width:0%;"></p>
@@ -194,13 +196,13 @@
         <!-- Tooltips require popper -->
         <script src="./scripts/popper.min.js"></script>
         <!-- More bootstrap -->
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
         <!-- My own javascript -->
         <script src="./scripts/scrippies.js"></script>
         <!-- Initialize tooltips -->
         <script>
             $(function () {
-                $('[data-toggle="tooltip"]').tooltip()
+                $('[data-bs-toggle="tooltip"]').tooltip()
             })
         </script>
     </body>

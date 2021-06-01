@@ -83,7 +83,6 @@ a {
     font-family: 'Itim', cursive;
     font-size: 80px;
     color: #f8b739;
-    display: inline-block;
 }
 
 .nav-link {
@@ -190,9 +189,6 @@ input[type=submit]:hover {
     position: fixed;
 }
 
-.icons {
-    /* display:inline-block; */
-}
 
 .maintext {
     font-family: 'Itim', cursive;
