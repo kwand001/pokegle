@@ -32,7 +32,6 @@ function getForm(formName, formNum) {
                 else {
                     $("#form" + formNum + "type1").text(json[i].type);
                     $("#form" + formNum + "type2").text("");
-                    $("#form" + formNum + "type2").css("background-color", "white");
                     removeType("form" + formNum + "type2");
                     typeColor(json[i].type[0], "form" + formNum + "type1");
                 }
@@ -98,12 +97,9 @@ function clearIcon(place) {
 }
 //Clear forms
 function clearAllForms() {
-    document.getElementById("form1").attributes[2].value = "display: none;";
-    document.getElementById("form2").attributes[2].value = "display: none;";
-    document.getElementById("form3").attributes[2].value = "display: none;";
-    document.getElementById("form4").attributes[2].value = "display: none;";
-    document.getElementById("form5").attributes[2].value = "display: none;";
-    document.getElementById("form6").attributes[2].value = "display: none;";
+    for (var i = 1; i < 7; ++i) {
+        $("#form" + i).attr("style", "display:none");
+    }
 }
 //Clear ability descriptions
 function clearAbilDesc(idName) {
@@ -113,9 +109,9 @@ function clearAbilDesc(idName) {
 function setStats(place, statValue) {
 
     pct = (statValue / 255) * 100;
-    if (pct < 17) {
-        pct = 17;
-    }
+    // if (pct < 5) {
+    //     pct = 5;
+    // }
     var statStat = "width: " + pct + "%;";
     document.getElementById(place).attributes[2].value = statStat; 
 }
@@ -129,10 +125,10 @@ function randomPkmn() {
 }
 
 //Fill in main form. Runs when a Pokemon is selected.
-function saveVar(poop) {
+function saveVar(searchOrRand) {
 
     var pkmn = document.getElementById("myInput").value.toUpperCase();
-    if (poop) {
+    if (searchOrRand) {
         var num = Math.floor(Math.random() * arr.length);
         pkmn = (arr[num]).toUpperCase();
     }
@@ -219,32 +215,24 @@ function saveVar(poop) {
                 
                 //FORMS-------------------------------------------------------------------------------------------------------
                 if (json[i].forms[0] != "NONE") {
-                    // document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-1 row-cols-md-2";
                     getForm(json[i].forms[0], 1);
                     $("#form1name").text(json[i].name);
 
                     if (json[i].forms.length == 2) {
-                        // document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-1 row-cols-md-3";
                         getForm(json[i].forms[1], 2);
                         $("#form2name").text(json[i].name);
                     }
                     else if (json[i].forms.length == 3) {
-                        // document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-1 row-cols-md-2";
                         getForm(json[i].forms[1], 2);
                         $("#form2name").text(json[i].name);
                         getForm(json[i].forms[2], 3);
                         $("#form3name").text(json[i].name);
                     }
                     else if (json[i].forms.length == 5) {
-                        // document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3";
-                        getForm(json[i].forms[1], 2);
-                        $("#form2name").text(json[i].name);
-                        getForm(json[i].forms[2], 3);
-                        $("#form3name").text(json[i].name);
-                        getForm(json[i].forms[3], 4);
-                        $("#form4name").text(json[i].name);
-                        getForm(json[i].forms[4], 5);
-                        $("#form5name").text(json[i].name);
+                        for (var k = 1; k < 5; ++k) {
+                            getForm(json[i].forms[k], k+1);
+                            $("#form" + (k+1) + "name").text(json[i].name);
+                        }
                     }
                 }
             }
