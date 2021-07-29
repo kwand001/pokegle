@@ -1,421 +1,78 @@
 // Changes how the type looks depending on what type the Pokemon is.
 function typeColor(type, attr) {
-    if (type == "fire") {
-        document.getElementById(attr).style.backgroundColor = "#EE8130";
-        document.getElementById(attr).style.color = "#FFFFFF";
-    }
-    else if (type == "normal") {
-        document.getElementById(attr).style.backgroundColor = "#A8A77A";
-        document.getElementById(attr).style.color = "#000000";
-    }
-    else if (type == "water") {
-        document.getElementById(attr).style.backgroundColor = "#6390F0";
-        document.getElementById(attr).style.color = "#FFFFFF";
-    }
-    else if (type == "electric") {
-        document.getElementById(attr).style.backgroundColor = "#F7D02C";
-        document.getElementById(attr).style.color = "#000000";
-    }
-    else if (type == "grass") {
-        document.getElementById(attr).style.backgroundColor = "#7AC74C";
-        document.getElementById(attr).style.color = "#FFFFFF";
-    }
-    else if (type == "bug") {
-        document.getElementById(attr).style.backgroundColor = "#A6B91A";
-        document.getElementById(attr).style.color = "#000000";
-    }
-    else if (type == "psychic") {
-        document.getElementById(attr).style.backgroundColor = "#F95587";
-        document.getElementById(attr).style.color = "#FFFFFF";
-    }
-    else if (type == "ground") {
-        document.getElementById(attr).style.backgroundColor = "#E2BF65";
-        document.getElementById(attr).style.color = "#000000";
-    }
-    else if (type == "poison") {
-        document.getElementById(attr).style.backgroundColor = "#A33EA1";
-        document.getElementById(attr).style.color = "#FFFFFF";
-    }
-    else if (type == "ice") {
-        document.getElementById(attr).style.backgroundColor = "#96D9D6";
-        document.getElementById(attr).style.color = "#000000";
-    }
-    else if (type == "rock") {
-        document.getElementById(attr).style.backgroundColor = "#B6A136";
-        document.getElementById(attr).style.color = "#000000";
-    }
-    else if (type == "fighting") {
-        document.getElementById(attr).style.backgroundColor = "#C22E28";
-        document.getElementById(attr).style.color = "#FFFFFF";
-    }
-    else if (type == "flying") {
-        document.getElementById(attr).style.backgroundColor = "#A98FF3";
-        document.getElementById(attr).style.color = "#000000";
-    }
-    else if (type == "ghost") {
-        document.getElementById(attr).style.backgroundColor = "#735797";
-        document.getElementById(attr).style.color = "#000000";
-    }
-    else if (type == "dragon") {
-        document.getElementById(attr).style.backgroundColor = "#6F35FC";
-        document.getElementById(attr).style.color = "#FFFFFF";
-    }
-    else if (type == "dark") {
-        document.getElementById(attr).style.backgroundColor = "#705746";
-        document.getElementById(attr).style.color = "#FFFFFF";
-    }
-    else if (type == "steel") {
-        document.getElementById(attr).style.backgroundColor = "#B7B7CE";
-        document.getElementById(attr).style.color = "#000000";
-    }
-    else if (type == "fairy") {
-        document.getElementById(attr).style.backgroundColor = "#D685AD";
-        document.getElementById(attr).style.color = "#000000";
-    }
+    removeType(attr);
+    $("#" + attr).addClass(type);
 }
-// Fill in Form1 column
-function getForm1(formName) {
-    document.getElementById("form2").attributes[2].value = "display: block;";
+
+function removeType(attr) {
+    $("#" + attr).removeClass("fire water normal electric grass bug psychic flying fighting ghost ice ground rock dragon dark steel fairy");
+}
+
+function getForm(formName, formNum) {
+    $("#form" + (formNum +1)).css("display", "block");
     $.getJSON("./data/forms.json", function(json) {
         for (var i = 0; i < json.length; ++i) {
             if (formName == json[i].name) {
-
-                //NAME--------------------------------------------------------------------------------------------------------
-                document.getElementById("form1name").innerHTML = json[i].name;
+                //NAME
+                $("#form" + formNum + "name").text(json[i].name);
                 if (json[i].id != "NONE") {
-                    addIcon(json[i].id, "form1icon");
+                    addIcon(json[i].id, "form" + formNum + "icon");
                 }
                 else {
-                    clearIcon("form1icon");
+                    clearIcon("form" + formNum + "icon");
                 }
-                //TYPE--------------------------------------------------------------------------------------------------------
+                //TYPE
                 if (json[i].type.length == 2) {
-                    document.getElementById("form1type1").innerHTML = json[i].type[0];
-                    document.getElementById("form1type2").innerHTML = json[i].type[1];
-                    typeColor(json[i].type[0], "form1type1")
-                    typeColor(json[i].type[1], "form1type2")
+                    $("#form" + formNum + "type1").text(json[i].type[0]);
+                    $("#form" + formNum + "type2").text(json[i].type[1]);
+                    typeColor(json[i].type[0], "form" + formNum + "type1");
+                    typeColor(json[i].type[1], "form" + formNum + "type2");
                 }
                 else {
-                    document.getElementById("form1type1").innerHTML = json[i].type;
-                    document.getElementById("form1type2").innerHTML = "";
-                    document.getElementById("form1type2").style.backgroundColor = "";
-                    typeColor(json[i].type[0], "form1type1")
+                    $("#form" + formNum + "type1").text(json[i].type);
+                    $("#form" + formNum + "type2").text("");
+                    $("#form" + formNum + "type2").css("background-color", "white");
+                    removeType("form" + formNum + "type2");
+                    typeColor(json[i].type[0], "form" + formNum + "type1");
                 }
-                //ABILITIES-----------------------------------------------------------------------------------------------------
+                //ABILITIES
                 if (json[i].ability.length == 2) {
-                    document.getElementById("form1abil1").innerHTML = json[i].ability[0];
-                    abilDesc(json[i].ability[0], "form1abil1");
-                    document.getElementById("form1abil2").innerHTML = json[i].ability[1];
-                    abilDesc(json[i].ability[1], "form1abil2");
+                    $("#form" + formNum + "abil1").text(json[i].ability[0]);
+                    abilDesc(json[i].ability[0], "form" + formNum + "abil1");
+                    $("#form" + formNum + "abil2").text(json[i].ability[1]);
+                    abilDesc(json[i].ability[1], "form" + formNum + "abil2");
                 }
                 else {
-                    document.getElementById("form1abil1").innerHTML = json[i].ability;
-                    abilDesc(json[i].ability, "form1abil1");
-                    document.getElementById("form1abil2").innerHTML = "-";
-                    clearAbilDesc("form1abil2");
+                    $("#form" + formNum + "abil1").text(json[i].ability);
+                    abilDesc(json[i].ability, "form" + formNum + "abil1");
+                    $("#form" + formNum + "abil2").text("");
+                    clearAbilDesc("form" + formNum + "abil2");
                 }
 
                 if (json[i].hiddenability != "NONE") {
-                    document.getElementById("form1ha").innerHTML = json[i].hiddenability;
-                    abilDesc(json[i].hiddenability, "form1ha");
+                    $("#form" + formNum + "ha").text(json[i].hiddenability);
+                    abilDesc(json[i].hiddenability, "form" + formNum + "ha");
                 }
                 else {
-
-                    document.getElementById("form1ha").innerHTML = "-";
-                    clearAbilDesc("form1ha");
+                    $("#form" + formNum + "ha").text("");
+                    clearAbilDesc("form" + formNum + "ha");
                 }
-                //STATS-------------------------------------------------------------------------------------------------------
-                document.getElementById("form1hp").innerHTML = "HP: " + json[i].stats[0];
-                setStats("form1hp", json[i].stats[0]);
-                document.getElementById("form1atk").innerHTML = "ATK: " + json[i].stats[1];
-                setStats("form1atk", json[i].stats[1]);
-                document.getElementById("form1def").innerHTML = "DEF: " + json[i].stats[2];
-                setStats("form1def", json[i].stats[2]);
-                document.getElementById("form1spa").innerHTML = "SpA: " + json[i].stats[3];
-                setStats("form1spa", json[i].stats[3]);
-                document.getElementById("form1spd").innerHTML = "SpD: " + json[i].stats[4];
-                setStats("form1spd", json[i].stats[4]);
-                document.getElementById("form1spe").innerHTML = "SPE: " + json[i].stats[5];
-                setStats("form1spe", json[i].stats[5]);
+                //STATS
+                $("#form" + formNum + "hp").text("HP: " + json[i].stats[0]);
+                setStats("form" + formNum + "hp", json[i].stats[0]);
+                $("#form" + formNum + "atk").text("ATK: " + json[i].stats[1]);
+                setStats("form" + formNum + "atk", json[i].stats[1]);
+                $("#form" + formNum + "def").text("DEF: " + json[i].stats[2]);
+                setStats("form" + formNum + "def", json[i].stats[2]);
+                $("#form" + formNum + "spa").text("SpA: " + json[i].stats[3]);
+                setStats("form" + formNum + "spa", json[i].stats[3]);
+                $("#form" + formNum + "spd").text("SpD: " + json[i].stats[4]);
+                setStats("form" + formNum + "spd", json[i].stats[4]);
+                $("#form" + formNum + "spe").text("SPE: " + json[i].stats[5]);
+                setStats("form" + formNum + "spe", json[i].stats[5]);
             }
         }
-    });
-}
-//Fill in Form2 column
-function getForm2(formName) {
-    document.getElementById("form3").attributes[2].value = "display: block;";
-    $.getJSON("./data/forms.json", function(json) {
-        for (var i = 0; i < json.length; ++i) {
-            if (formName == json[i].name) {
-
-                //NAME--------------------------------------------------------------------------------------------------------
-                document.getElementById("form2name").innerHTML = json[i].name;
-                if (json[i].id != "NONE") {
-                    addIcon(json[i].id, "form2icon");
-                }
-                else {
-                    clearIcon("form2icon");
-                }
-                //TYPE--------------------------------------------------------------------------------------------------------
-                if (json[i].type.length == 2) {
-                    document.getElementById("form2type1").innerHTML = json[i].type[0];
-                    document.getElementById("form2type2").innerHTML = json[i].type[1];
-                    typeColor(json[i].type[0], "form2type1")
-                    typeColor(json[i].type[1], "form2type2")
-                }
-                else {
-                    document.getElementById("form2type1").innerHTML = json[i].type;
-                    document.getElementById("form2type2").innerHTML = "";
-                    document.getElementById("form2type2").style.backgroundColor = "";
-                    typeColor(json[i].type[0], "form2type1")
-                }
-
-                //ABILITIES-----------------------------------------------------------------------------------------------------
-                if (json[i].ability.length == 2) {
-                    document.getElementById("form2abil1").innerHTML = json[i].ability[0];
-                    abilDesc(json[i].ability[0], "form2abil1");
-                    document.getElementById("form2abil2").innerHTML = json[i].ability[1];
-                    abilDesc(json[i].ability[1], "form2abil2");
-                }
-                else {
-                    document.getElementById("form2abil1").innerHTML = json[i].ability;
-                    abilDesc(json[i].ability, "form2abil1");
-                    document.getElementById("form2abil2").innerHTML = "-";
-                    clearAbilDesc("form2abil2");
-                }
-
-                if (json[i].hiddenability != "NONE") {
-                    document.getElementById("form2ha").innerHTML = json[i].hiddenability;
-                    abilDesc(json[i].hiddenability, "form2ha");
-                }
-                else {
-
-                    document.getElementById("form2ha").innerHTML = "-";
-                    clearAbilDesc("form2ha");
-                }
-                //STATS-------------------------------------------------------------------------------------------------------
-                document.getElementById("form2hp").innerHTML = "HP: " + json[i].stats[0];
-                setStats("form2hp", json[i].stats[0]);
-                document.getElementById("form2atk").innerHTML = "ATK: " + json[i].stats[1];
-                setStats("form2atk", json[i].stats[1]);
-                document.getElementById("form2def").innerHTML = "DEF: " + json[i].stats[2];
-                setStats("form2def", json[i].stats[2]);
-                document.getElementById("form2spa").innerHTML = "SpA: " + json[i].stats[3];
-                setStats("form2spa", json[i].stats[3]);
-                document.getElementById("form2spd").innerHTML = "SpD: " + json[i].stats[4];
-                setStats("form2spd", json[i].stats[4]);
-                document.getElementById("form2spe").innerHTML = "SPE: " + json[i].stats[5];
-                setStats("form2spe", json[i].stats[5]);
-            }
-        }
-    });
-}
-//Fill in Form3 column
-function getForm3(formName) {
-    document.getElementById("form4").attributes[2].value = "display: block;";
-    $.getJSON("./data/forms.json", function(json) {
-        for (var i = 0; i < json.length; ++i) {
-            if (formName == json[i].name) {
-
-                //NAME--------------------------------------------------------------------------------------------------------
-                document.getElementById("form3name").innerHTML = json[i].name;
-                if (json[i].id != "NONE") {
-                    addIcon(json[i].id, "form3icon");
-                }
-                else {
-                    clearIcon("form3icon");
-                }
-                //TYPE--------------------------------------------------------------------------------------------------------
-                if (json[i].type.length == 2) {
-                    document.getElementById("form3type1").innerHTML = json[i].type[0];
-                    document.getElementById("form3type2").innerHTML = json[i].type[1];
-                    typeColor(json[i].type[0], "form3type1")
-                    typeColor(json[i].type[1], "form3type2")
-                }
-                else {
-                    document.getElementById("form3type1").innerHTML = json[i].type;
-                    document.getElementById("form3type2").innerHTML = "";
-                    document.getElementById("form3type2").style.backgroundColor = "";
-                    typeColor(json[i].type[0], "form3type1")
-                }
-
-                //ABILITIES-----------------------------------------------------------------------------------------------------
-                if (json[i].ability.length == 2) {
-                    document.getElementById("form3abil1").innerHTML = json[i].ability[0];
-                    abilDesc(json[i].ability[0], "form3abil1");
-                    document.getElementById("form3abil2").innerHTML = json[i].ability[1];
-                    abilDesc(json[i].ability[1], "form3abil2");
-                }
-                else {
-                    document.getElementById("form3abil1").innerHTML = json[i].ability;
-                    abilDesc(json[i].ability, "form3abil1");
-                    document.getElementById("form3abil2").innerHTML = "-";
-                    clearAbilDesc("form3abil2");
-                }
-
-                if (json[i].hiddenability != "NONE") {
-                    document.getElementById("form3ha").innerHTML = json[i].hiddenability;
-                    abilDesc(json[i].hiddenability, "form3ha");
-                }
-                else {
-
-                    document.getElementById("form3ha").innerHTML = "-";
-                    clearAbilDesc("form3ha");
-                }
-                //STATS-------------------------------------------------------------------------------------------------------
-                document.getElementById("form3hp").innerHTML = "HP: " + json[i].stats[0];
-                setStats("form3hp", json[i].stats[0]);
-                document.getElementById("form3atk").innerHTML = "ATK: " + json[i].stats[1];
-                setStats("form3atk", json[i].stats[1]);
-                document.getElementById("form3def").innerHTML = "DEF: " + json[i].stats[2];
-                setStats("form3def", json[i].stats[2]);
-                document.getElementById("form3spa").innerHTML = "SpA: " + json[i].stats[3];
-                setStats("form3spa", json[i].stats[3]);
-                document.getElementById("form3spd").innerHTML = "SpD: " + json[i].stats[4];
-                setStats("form3spd", json[i].stats[4]);
-                document.getElementById("form3spe").innerHTML = "SPE: " + json[i].stats[5];
-                setStats("form3spe", json[i].stats[5]);
-            }
-        }
-    });
-}
-//Fill in Form4 column
-function getForm4(formName) {
-    document.getElementById("form5").attributes[2].value = "display: block;";
-    $.getJSON("./data/forms.json", function(json) {
-        for (var i = 0; i < json.length; ++i) {
-            if (formName == json[i].name) {
-
-                //NAME--------------------------------------------------------------------------------------------------------
-                document.getElementById("form4name").innerHTML = json[i].name;
-                if (json[i].id != "NONE") {
-                    addIcon(json[i].id, "form4icon");
-                }
-                else {
-                    clearIcon("form4icon");
-                }
-                //TYPE--------------------------------------------------------------------------------------------------------
-                if (json[i].type.length == 2) {
-                    document.getElementById("form4type1").innerHTML = json[i].type[0];
-                    document.getElementById("form4type2").innerHTML = json[i].type[1];
-                    typeColor(json[i].type[0], "form4type1")
-                    typeColor(json[i].type[1], "form4type2")
-                }
-                else {
-                    document.getElementById("form4type1").innerHTML = json[i].type;
-                    document.getElementById("form4type2").innerHTML = "";
-                    document.getElementById("form4type2").style.backgroundColor = "";
-                    typeColor(json[i].type[0], "form4type1")
-                }
-
-                //ABILITIES-----------------------------------------------------------------------------------------------------
-                if (json[i].ability.length == 2) {
-                    document.getElementById("form4abil1").innerHTML = json[i].ability[0];
-                    abilDesc(json[i].ability[0], "form4abil1");
-                    document.getElementById("form4abil2").innerHTML = json[i].ability[1];
-                    abilDesc(json[i].ability[1], "form4abil2");
-                }
-                else {
-                    document.getElementById("form4abil1").innerHTML = json[i].ability;
-                    abilDesc(json[i].ability, "form4abil1");
-                    document.getElementById("form4abil2").innerHTML = "-";
-                    clearAbilDesc("form4abil2");
-                }
-
-                if (json[i].hiddenability != "NONE") {
-                    document.getElementById("form4ha").innerHTML = json[i].hiddenability;
-                    abilDesc(json[i].hiddenability, "form4ha");
-                }
-                else {
-
-                    document.getElementById("form4ha").innerHTML = "-";
-                    clearAbilDesc("form4ha");
-                }
-                //STATS-------------------------------------------------------------------------------------------------------
-                document.getElementById("form4hp").innerHTML = "HP: " + json[i].stats[0];
-                setStats("form4hp", json[i].stats[0]);
-                document.getElementById("form4atk").innerHTML = "ATK: " + json[i].stats[1];
-                setStats("form4atk", json[i].stats[1]);
-                document.getElementById("form4def").innerHTML = "DEF: " + json[i].stats[2];
-                setStats("form4def", json[i].stats[2]);
-                document.getElementById("form4spa").innerHTML = "SpA: " + json[i].stats[3];
-                setStats("form4spa", json[i].stats[3]);
-                document.getElementById("form4spd").innerHTML = "SpD: " + json[i].stats[4];
-                setStats("form4spd", json[i].stats[4]);
-                document.getElementById("form4spe").innerHTML = "SPE: " + json[i].stats[5];
-                setStats("form4spe", json[i].stats[5]);
-            }
-        }
-    });
-}
-//Fill in Form5 column
-function getForm5(formName) {
-    document.getElementById("form6").attributes[2].value = "display: block;";
-    $.getJSON("./data/forms.json", function(json) {
-        for (var i = 0; i < json.length; ++i) {
-            if (formName == json[i].name) {
-
-                //NAME--------------------------------------------------------------------------------------------------------
-                document.getElementById("form5name").innerHTML = json[i].name;
-                if (json[i].id != "NONE") {
-                    addIcon(json[i].id, "form5icon");
-                }
-                else {
-                    clearIcon("form5icon");
-                }
-                //TYPE--------------------------------------------------------------------------------------------------------
-                if (json[i].type.length == 2) {
-                    document.getElementById("form5type1").innerHTML = json[i].type[0];
-                    document.getElementById("form5type2").innerHTML = json[i].type[1];
-                    typeColor(json[i].type[0], "form5type1")
-                    typeColor(json[i].type[1], "form5type2")
-                }
-                else {
-                    document.getElementById("form5type1").innerHTML = json[i].type;
-                    document.getElementById("form5type2").innerHTML = "";
-                    document.getElementById("form5type2").style.backgroundColor = "";
-                    typeColor(json[i].type[0], "form5type1")
-                }
-
-                //ABILITIES-----------------------------------------------------------------------------------------------------
-                if (json[i].ability.length == 2) {
-                    document.getElementById("form5abil1").innerHTML = json[i].ability[0];
-                    abilDesc(json[i].ability[0], "form5abil1");
-                    document.getElementById("form5abil2").innerHTML = json[i].ability[1];
-                    abilDesc(json[i].ability[1], "form5abil2");
-                }
-                else {
-                    document.getElementById("form5abil1").innerHTML = json[i].ability;
-                    abilDesc(json[i].ability, "form5abil1");
-                    document.getElementById("form5abil2").innerHTML = "-";
-                    clearAbilDesc("form5abil2");
-                }
-
-                if (json[i].hiddenability != "NONE") {
-                    document.getElementById("form5ha").innerHTML = json[i].hiddenability;
-                    abilDesc(json[i].hiddenability, "form5ha");
-                }
-                else {
-
-                    document.getElementById("form5ha").innerHTML = "-";
-                    clearAbilDesc("form5ha");
-                }
-                //STATS-------------------------------------------------------------------------------------------------------
-                document.getElementById("form5hp").innerHTML = "HP: " + json[i].stats[0];
-                setStats("form5hp", json[i].stats[0]);
-                document.getElementById("form5atk").innerHTML = "ATK: " + json[i].stats[1];
-                setStats("form5atk", json[i].stats[1]);
-                document.getElementById("form5def").innerHTML = "DEF: " + json[i].stats[2];
-                setStats("form5def", json[i].stats[2]);
-                document.getElementById("form5spa").innerHTML = "SpA: " + json[i].stats[3];
-                setStats("form5spa", json[i].stats[3]);
-                document.getElementById("form5spd").innerHTML = "SpD: " + json[i].stats[4];
-                setStats("form5spd", json[i].stats[4]);
-                document.getElementById("form5spe").innerHTML = "SPE: " + json[i].stats[5];
-                setStats("form5spe", json[i].stats[5]);
-            }
-        }
-    });
+    })
 }
 
 //Get icon from Serebii's site
@@ -488,7 +145,8 @@ function saveVar(poop) {
                      //NAME--------------------------------------------------------------------------------------------------------
                      document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-1 row-cols-md-2";
                      document.getElementById("form2").attributes[2].value = "display: block;";
-                     document.getElementById("form1name").innerHTML = json[i].name;
+                    //  document.getElementById("form1name").innerHTML = json[i].name;
+                     $("#form" + 1 + "name").text(json[i].name);
                     if (json[i].id != "NONE") {
                         addIcon(json[i].id, "form1icon");
                     }
@@ -505,7 +163,8 @@ function saveVar(poop) {
                     else {
                         document.getElementById("form1type1").innerHTML = json[i].type;
                         document.getElementById("form1type2").innerHTML = "";
-                        document.getElementById("form1type2").style.backgroundColor = "";
+                        removeType("form1type2");
+                        // document.getElementById("form1type2").style.backgroundColor = "";
                         typeColor(json[i].type[0], "form1type1")
                     }
                     //ABILITIES-----------------------------------------------------------------------------------------------------
@@ -569,6 +228,7 @@ function saveVar(poop) {
                     else {
                         document.getElementById("type1").innerHTML = json[i].type;
                         document.getElementById("type2").innerHTML = "";
+                        removeType("type2");
                         document.getElementById("type2").style.backgroundColor = "";
                         typeColor(json[i].type[0], "type1")
                     }
@@ -612,24 +272,23 @@ function saveVar(poop) {
                     //FORMS-------------------------------------------------------------------------------------------------------
                     if (json[i].forms[0] != "NONE") {
                         document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-1 row-cols-md-2";
-                        getForm1(json[i].forms[0]);
+                        getForm(json[i].forms[0], 1);
 
                         if (json[i].forms.length == 2) {
                             document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-1 row-cols-md-3";
-                            getForm2(json[i].forms[1]);
+                            getForm(json[i].forms[1], 2);
                         }
                         else if (json[i].forms.length == 3) {
                             document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-1 row-cols-md-2";
-                            getForm2(json[i].forms[1]);
-                            getForm3(json[i].forms[2]);
+                            getForm(json[i].forms[1], 2);
+                            getForm(json[i].forms[2], 3);
                         }
-                        //literally only for Rotom......
                         else if (json[i].forms.length == 5) {
                             document.getElementById("maincols").attributes[1].value = "row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-3";
-                            getForm2(json[i].forms[1]);
-                            getForm3(json[i].forms[2]);
-                            getForm4(json[i].forms[3]);
-                            getForm5(json[i].forms[4]);
+                            getForm(json[i].forms[1], 2);
+                            getForm(json[i].forms[2], 3);
+                            getForm(json[i].forms[3], 4);
+                            getForm(json[i].forms[4], 5);
                         }
                     }
                 }
