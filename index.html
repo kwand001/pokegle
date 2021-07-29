@@ -74,12 +74,30 @@
 
 
     <!-- POKEMON INFORMATION -->
-
-            <!-- The number of columns will change depending on how many forms the Pokemon has. -->
-            <div id= maincols class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
-
-                <!-- Main Form -->
-                <div class="col" id="form1" style="display: block;"> 
+            <!-- TABS -->
+            <ul class="nav nav-tabs mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active poketab" id="form1" style="display: block;" data-bs-toggle="pill" data-bs-target="#form1tab" type="button" role="tab" aria-controls="form1tab" aria-selected="true"></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link poketab" id="form2" style="display: none;" data-bs-toggle="pill" data-bs-target="#form2tab" type="button" role="tab" aria-controls="form2tab" aria-selected="false"></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link poketab" id="form3" style="display: none;" data-bs-toggle="pill" data-bs-target="#form3tab" type="button" role="tab" aria-controls="form3tab" aria-selected="false"></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link poketab" id="form4" style="display: none;" data-bs-toggle="pill" data-bs-target="#form4tab" type="button" role="tab" aria-controls="form4tab" aria-selected="false"></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link poketab" id="form5" style="display: none;" data-bs-toggle="pill" data-bs-target="#form5tab" type="button" role="tab" aria-controls="form5tab" aria-selected="false"></button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link poketab" id="form6" style="display: none;" data-bs-toggle="pill" data-bs-target="#form6tab" type="button" role="tab" aria-controls="form6tab" aria-selected="false"></button>
+                </li>
+            </ul>
+            <!-- CONTENT -->
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="form1tab" role="tabpanel" aria-labelledby="form1tab-tab">
                     <img id="pokeicon" class="icons" src="">
                     <p id="type1" class="types rounded"></p> 
                     <p id="type2" class="types rounded"></p>
@@ -93,11 +111,9 @@
                     <p id="def" class="defs rounded" style="width:0%;"></p>
                     <p id="spa" class="spas rounded" style="width:0%;"></p>
                     <p id="spd" class="spds rounded" style="width:0%;"></p>
-                    <p id="spe" class="spes rounded" style="width:0%;"></p>     
+                    <p id="spe" class="spes rounded" style="width:0%;"></p>   
                 </div>
-                
-                <!-- Alternate Form 1 -->
-                <div class="col" id="form2" style="display: none;">
+                <div class="tab-pane fade" id="form2tab" role="tabpanel" aria-labelledby="form2tab-tab">
                     <img id="form1icon" class="icons" src="">
                     <p id="form1type1" class="types"></p> 
                     <p id="form1type2" class="types"></p>
@@ -113,9 +129,7 @@
                     <p id="form1spd" class="spds rounded" style="width:0%;"></p>
                     <p id="form1spe" class="spes rounded" style="width:0%;"></p>
                 </div>
-
-                <!-- Alternate Form 2 -->
-                <div class="col" id="form3" style="display: none;"> 
+                <div class="tab-pane fade" id="form3tab" role="tabpanel" aria-labelledby="form3tab-tab">
                     <img id="form2icon" class="icons" src="">
                     <p id="form2type1" class="types"></p> 
                     <p id="form2type2" class="types"></p>
@@ -131,9 +145,7 @@
                     <p id="form2spd" class="spds rounded" style="width:0%;"></p>
                     <p id="form2spe" class="spes rounded" style="width:0%;"></p>
                 </div>
-
-                <!-- Alternate Form 3 -->
-                <div class="col" id="form4" style="display: none;"> 
+                <div class="tab-pane fade" id="form4tab" role="tabpanel" aria-labelledby="form4tab-tab">
                     <img id="form3icon" class="icons" src="">
                     <p id="form3type1" class="types"></p> 
                     <p id="form3type2" class="types"></p>
@@ -149,10 +161,7 @@
                     <p id="form3spd" class="spds rounded" style="width:0%;"></p>
                     <p id="form3spe" class="spes rounded" style="width:0%;"></p>
                 </div>
-                <!-- Thanks to Rotom having FIVE alternate forms, we need a few more columns. :)  -->
-
-                <!-- Alternate Form 4/Rotom Form 4 -->
-                <div class="col" id="form5" style="display: none;"> 
+                <div class="tab-pane fade" id="form5tab" role="tabpanel" aria-labelledby="form5tab-tab">
                     <img id="form4icon" class="icons" src="">
                     <p id="form4type1" class="types"></p> 
                     <p id="form4type2" class="types"></p>
@@ -168,9 +177,7 @@
                     <p id="form4spd" class="spds rounded" style="width:0%;"></p>
                     <p id="form4spe" class="spes rounded" style="width:0%;"></p>
                 </div>
-
-                <!-- Alternate Form 5/Rotom Form 5 -->
-                <div class="col" id="form6" style="display: none;"> 
+                <div class="tab-pane fade" id="form6tab" role="tabpanel" aria-labelledby="form6tab-tab">
                     <img id="form5icon" class="icons" src="">
                     <p id="form5type1" class="types"></p> 
                     <p id="form5type2" class="types"></p>
@@ -187,6 +194,9 @@
                     <p id="form5spe" class="spes rounded" style="width:0%;"></p>
                 </div>
             </div>
+
+            </ul>
+            <!-- The number of columns will change depending on how many forms the Pokemon has. -->
         </div>
 
         <!-- jQuery -->
