@@ -126,7 +126,7 @@ function randomPkmn() {
 
 //Fill in main form. Runs when a Pokemon is selected.
 function saveVar(searchOrRand) {
-
+    
     var pkmn = document.getElementById("myInput").value.toUpperCase();
     if (searchOrRand) {
         var num = Math.floor(Math.random() * arr.length);

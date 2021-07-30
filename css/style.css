@@ -190,8 +190,20 @@ a {
     color: #f8b739;
 }
 
-.nav-link {
+.navlink {
     font-size: 20px;
+}
+
+
+.tab-content {
+    border-style: solid;
+    border-width: 1px;
+    border-top: none;
+    border-color: #dee2e6;
+}
+
+.poketab {
+    font-size: 16px;
 }
 
 body {
