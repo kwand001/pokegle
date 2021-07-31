@@ -194,12 +194,20 @@ a {
     font-size: 20px;
 }
 
+#pills-tab {
+    margin-bottom: 0px !important;
+}
+
+#pills-tabContent {
+    padding-top: 16px;
+}
 
 .tab-content {
     border-style: solid;
     border-width: 1px;
     border-top: none;
     border-color: #dee2e6;
+    padding: 8px;
 }
 
 .poketab {
@@ -343,6 +351,10 @@ input[type=submit]:hover {
 
 }
 
+#pokeicon {
+    margin-right: 10px;
+}
+
 .search {
     padding: 10px 450px 0 450px;
     position: relative;
@@ -354,7 +366,7 @@ input[type=submit]:hover {
     display: inline-block;
     border: none;
     border-radius: 10%;
-    padding: 5px;
+    padding: 0.8px;
     text-align: center;
     width: 70px;
 }
