@@ -21,4 +21,4 @@ Add an option to compare two pokemon.
 
 Add a dark mode. 
 
-Add a way to show a pokémon's evolutions/pre-evolutions.
+Add a type chart.
